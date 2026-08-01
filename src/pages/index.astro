@@ -47,7 +47,7 @@ const publications = (await getCollection('publications'))
           class="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs"
           aria-label="Profile links"
         >
-          <a href="/research" class="text-signal hover:underline">Research →</a>
+          <a href="/research" class="text-signal hover:underline">Publications →</a>
           <a href="/cv" class="text-signal hover:underline">CV →</a>
         </nav>
       </div>
@@ -95,7 +95,7 @@ const publications = (await getCollection('publications'))
   <section class="border-line border-y">
     <div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[15rem_1fr]">
       <div>
-        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Research</p>
+        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Publications</p>
         <h2 class="font-display text-ink mt-5 text-2xl leading-tight sm:text-3xl">
           Across disciplines
         </h2>
@@ -104,7 +104,7 @@ const publications = (await getCollection('publications'))
           photonics.
         </p>
         <a href="/research" class="text-signal mt-6 inline-block font-mono text-xs hover:underline"
-          >Publication record →</a
+          >View all publications →</a
         >
       </div>
       <div>{publications.map((entry) => <PublicationRow entry={entry} />)}</div>
