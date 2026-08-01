@@ -30,7 +30,7 @@ const stamp = formatDate(date, 'compact');
   </span>
 
   <span class="flex items-center justify-between gap-4 sm:justify-end">
-    {impact && <span class="text-signal font-mono text-xs sm:hidden">{impact}</span>}
+    {impact && <span class="text-ink-soft font-mono text-xs sm:hidden">{impact}</span>}
     <span class="text-ink-soft hidden font-mono text-[11px] md:block">
       {impact ?? tags.slice(0, 2).join(' · ')}
     </span>

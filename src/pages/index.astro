@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Button from '@/components/Button.astro';
 import WorkRow from '@/components/WorkRow.astro';
 import PublicationRow from '@/components/PublicationRow.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
@@ -19,83 +18,92 @@ const publications = (await getCollection('publications'))
   .filter((entry) => entry.data.featured)
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 4);
-
-const metrics = [
-  { value: '15+', label: 'ML engineers led' },
-  { value: '65+', label: 'production launches in 2025' },
-  { value: '$2M+', label: 'annualized cost savings' },
-  { value: '40+', label: 'research publications' },
-];
 ---
 
 <BaseLayout title={SITE.name}>
-  <section class="hero-field border-line relative overflow-hidden border-b">
+  <section class="border-line border-b">
     <div
-      class="mx-auto grid max-w-6xl gap-14 px-5 pt-16 pb-18 sm:px-8 sm:pt-24 sm:pb-24 lg:grid-cols-[1fr_20rem] lg:items-end"
+      class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-20 lg:py-24"
     >
       <div>
-        <p
-          class="text-ink-soft mb-7 flex items-center gap-3 font-mono text-[11px] tracking-[0.16em] uppercase"
-        >
-          <span class="bg-signal h-1.5 w-1.5 rounded-full" aria-hidden="true"></span>
-          Technology leadership · Interdisciplinary science
-        </p>
         <h1
-          class="font-display text-ink max-w-4xl text-5xl leading-[0.98] font-medium tracking-[-0.035em] sm:text-7xl lg:text-[5.8rem]"
+          class="font-display text-ink text-4xl leading-tight font-semibold tracking-[-0.025em] sm:text-5xl"
         >
-          From first principles to <em class="text-signal font-normal">real-world impact.</em>
+          Ryan Hou, Ph.D.
         </h1>
-        <p class="text-ink-soft mt-8 max-w-2xl text-base leading-relaxed sm:text-lg">
+        <p class="text-ink-soft mt-2 text-base italic sm:text-lg">
+          Technology Leader & Interdisciplinary Scientist
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-2">
+          <a
+            href="/work"
+            class="border-line text-ink-soft hover:border-signal hover:text-ink rounded-full border px-3 py-1.5 font-mono text-[11px] transition-colors"
+            >AI Systems</a
+          >
+          <a
+            href="/research"
+            class="border-line text-ink-soft hover:border-signal hover:text-ink rounded-full border px-3 py-1.5 font-mono text-[11px] transition-colors"
+            >Quantum Technologies</a
+          >
+        </div>
+
+        <p class="text-ink mt-8 max-w-3xl text-base leading-8 sm:text-[1.0625rem]">
           {SITE.intro}
         </p>
-        <div class="mt-9 flex flex-wrap items-center gap-3">
-          <Button href="/work">Explore selected work →</Button>
-          <Button href="/research" variant="ghost">View research</Button>
-        </div>
+        <p class="font-display text-ink-soft mt-6 text-lg italic">{SITE.tagline}</p>
+
+        <nav
+          class="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs"
+          aria-label="Profile links"
+        >
+          <a href="/work" class="text-signal hover:underline">Selected work →</a>
+          <a href="/research" class="text-signal hover:underline">Research →</a>
+          <a href="/cv" class="text-signal hover:underline">CV →</a>
+        </nav>
       </div>
 
       <aside
-        class="border-line bg-paper/70 relative rounded-3xl border p-6 backdrop-blur sm:p-7"
-        aria-label="Current focus"
+        class="border-line border-t pt-8 lg:border-t-0 lg:border-l lg:pt-1 lg:pl-9"
+        aria-label="Current appointments"
       >
-        <div class="orbit-mark" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <p class="text-ink-soft font-mono text-[11px] tracking-[0.16em] uppercase">Current focus</p>
-        <div class="mt-8 space-y-5">
+        <p class="text-ink-soft font-mono text-[11px] tracking-[0.18em] uppercase">Currently</p>
+        <div class="mt-6 space-y-6">
           <div>
-            <p class="font-display text-ink text-xl">AI Systems</p>
-            <p class="text-ink-soft mt-1 text-sm">
-              Retrieval, ranking, generative modeling, and technical leadership at scale.
+            <p class="font-display text-ink text-lg">Pinterest</p>
+            <p class="text-ink-soft mt-1 text-sm leading-relaxed">
+              Tech Lead, Machine Learning<br />Closeup retrieval & pre-ranking
             </p>
           </div>
-          <div class="border-line border-t pt-5">
-            <p class="font-display text-ink text-xl">Quantum Technologies</p>
-            <p class="text-ink-soft mt-1 text-sm">
-              Quantum computing, sensing, information, and paths to translation.
+          <div class="border-line border-t pt-6">
+            <p class="font-display text-ink text-lg">Washington University in St. Louis</p>
+            <p class="text-ink-soft mt-1 text-sm leading-relaxed">
+              Visiting Researcher<br />Quantum computing & sensing
             </p>
           </div>
+        </div>
+        <div
+          class="border-line mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t pt-5 font-mono text-[11px]"
+        >
+          <a
+            href="https://scholar.google.com/citations?user=mJJxP8EAAAAJ"
+            target="_blank"
+            rel="noreferrer"
+            class="text-ink-soft hover:text-signal">Scholar ↗</a
+          >
+          <a
+            href="https://github.com/rhou89"
+            target="_blank"
+            rel="noreferrer"
+            class="text-ink-soft hover:text-signal">GitHub ↗</a
+          >
+          <a href={`mailto:${SITE.email}`} class="text-ink-soft hover:text-signal">Email ↗</a>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="border-line border-b">
-    <div class="mx-auto grid max-w-6xl grid-cols-2 px-5 sm:px-8 lg:grid-cols-4">
-      {
-        metrics.map((metric) => (
-          <div class="border-line py-8 odd:border-r even:pl-6 lg:border-r lg:px-7 lg:first:pl-0 lg:last:border-r-0">
-            <p class="font-display text-ink text-3xl sm:text-4xl">{metric.value}</p>
-            <p class="text-ink-soft mt-1 max-w-36 font-mono text-[10px] leading-relaxed tracking-wide uppercase">
-              {metric.label}
-            </p>
-          </div>
-        ))
-      }
-    </div>
-  </section>
-
-  <section id="work" class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+  <section id="work" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
     <SectionHeading eyebrow="Selected work" count={allWork.length} />
     <div>{selectedWork.map((entry) => <WorkRow entry={entry} />)}</div>
     <a href="/work" class="text-signal mt-7 inline-block font-mono text-xs hover:underline"
@@ -103,19 +111,19 @@ const metrics = [
     >
   </section>
 
-  <section class="border-line bg-surface/55 border-y">
-    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[17rem_1fr]">
+  <section class="border-line border-y">
+    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[15rem_1fr]">
       <div>
         <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Research</p>
-        <h2 class="font-display text-ink mt-5 text-3xl leading-tight sm:text-4xl">
-          One research practice,<br />across disciplines.
+        <h2 class="font-display text-ink mt-5 text-2xl leading-tight sm:text-3xl">
+          Across disciplines
         </h2>
-        <p class="text-ink-soft mt-5 text-sm leading-relaxed">
+        <p class="text-ink-soft mt-4 text-sm leading-relaxed">
           Selected work spanning recommender systems, quantum information, nonlinear dynamics, and
           photonics.
         </p>
         <a href="/research" class="text-signal mt-6 inline-block font-mono text-xs hover:underline"
-          >Explore the publication record →</a
+          >Publication record →</a
         >
       </div>
       <div>{publications.map((entry) => <PublicationRow entry={entry} />)}</div>
@@ -123,14 +131,14 @@ const metrics = [
   </section>
 
   <section
-    class="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-20"
+    class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-20"
   >
     <div>
       <SectionHeading eyebrow="A nonlinear path" />
-      <p class="font-display text-ink text-2xl leading-snug sm:text-3xl">
+      <p class="font-display text-ink text-2xl leading-snug">
         Computer science to quantum physics—and back to production AI.
       </p>
-      <p class="text-ink-soft mt-5 max-w-xl leading-relaxed">
+      <p class="text-ink-soft mt-4 max-w-xl leading-relaxed">
         That path shaped how I work: start with the underlying mechanism, connect ideas across
         fields, and stay accountable to what ships in the real world.
       </p>
@@ -140,23 +148,13 @@ const metrics = [
     </div>
     <div id="contact">
       <SectionHeading eyebrow="Connect" />
-      <p class="font-display text-ink text-2xl leading-snug sm:text-3xl">
-        Interested in ambitious technical problems, interdisciplinary research, or turning deep
-        technology into impact?
+      <p class="font-display text-ink text-2xl leading-snug">
+        For research collaborations, technical leadership, and deep-technology translation.
       </p>
       <a
         href={`mailto:${SITE.email}`}
         class="text-signal mt-6 inline-flex font-mono text-sm hover:underline">{SITE.email} ↗</a
       >
-    </div>
-  </section>
-
-  <section class="border-line border-t">
-    <div
-      class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 sm:px-8 md:flex-row md:items-center md:justify-between"
-    >
-      <p class="text-ink-soft font-mono text-[11px] uppercase">Now</p>
-      <p class="text-ink max-w-4xl text-sm leading-relaxed md:text-right">{SITE.status}</p>
     </div>
   </section>
 </BaseLayout>
