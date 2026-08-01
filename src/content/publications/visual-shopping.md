@@ -6,5 +6,5 @@ authorship: First and corresponding author
 url: https://doi.org/10.1145/3726302.3731958
 topics: [AI Systems, Retrieval, E-commerce]
 featured: true
-order: 3
+order: 4
 ---

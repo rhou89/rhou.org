@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import retrievalSystems from '@/assets/images/research/retrieval-systems.webp';
+import physicsInspiredComputing from '@/assets/images/research/physics-inspired-computing.webp';
+import quantumMatter from '@/assets/images/research/quantum-matter.webp';
+import topologicalSystems from '@/assets/images/research/topological-systems.webp';
+
+const researchAreas = [
+  {
+    domain: 'AI Systems',
+    title: 'Retrieval & Recommendation at Scale',
+    image: retrievalSystems,
+    alt: 'A large field of varied content nodes passing through a multi-stage retrieval system.',
+    description:
+      'Large-scale recommendation begins well before ranking: it depends on what a system retrieves, when it retrieves, and how efficiently it represents the corpus. My work develops production retrieval methods that combine multimodal representation learning, semantic identifiers, causal decision-making, and bias-aware exploration. The emphasis is on systems that remain measurable and dependable at web scale, from visual-shopping retrieval and cold-start discovery to generative recommendation and causal triggers.',
+  },
+  {
+    domain: 'Computational Physics',
+    title: 'Physics-Inspired Intelligence & Optimization',
+    image: physicsInspiredComputing,
+    alt: 'Coupled physical nodes, a hybrid computing sequence, and an Ising-like optimization lattice.',
+    description:
+      'Many hard computational problems can be understood as dynamical systems moving across structured energy landscapes. This research connects nonlinear physics, optimization, and machine learning by comparing physics- and quantum-inspired solvers (like oscillator and Ising), exploring hybrid quantum–classical neural components, and using physics-guided learning for inverse design. The common question is how physical structure can make computation more efficient, interpretable, and controllable.',
+  },
+  {
+    domain: 'Quantum Matter',
+    title: 'Synthetic Dimensions & Nonlinear Dynamics',
+    image: quantumMatter,
+    alt: 'Two atomic probability clouds coupled to a synthetic lattice of momentum states.',
+    description:
+      'Ultracold atoms make it possible to build and probe forms of matter whose geometry and dynamics are engineered rather than inherited. My research uses spin–orbit coupling, momentum-space tunneling, and synthetic lattices to study superfluid order, quantum transport, and interaction-driven dynamics. It spans superfluid quasicrystals, momentum-space Josephson junctions, long-lived stripe phases, one-way spin switching, and nonlinear evolution in momentum-state lattices.',
+  },
+  {
+    domain: 'Topology & Photonics',
+    title: 'Topological & Non-Hermitian Systems',
+    image: topologicalSystems,
+    alt: 'A photonic lattice with a protected blue boundary path and topological band geometry.',
+    description:
+      'Topology provides a language for robust behavior that survives disorder and deformation; non-Hermitian physics extends it to open, amplifying, and lossy systems. My work develops models across quantum matter and photonics, including higher-order Majorana modes, spin-tensor topological phases, non-Hermitian hyperbolic media, and topological microlasers. These studies connect band structure and symmetry to observable edge (or corner, hinge), and lasing states.',
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Research"
+  description="Research areas of Ryan Hou across large-scale retrieval, physics-inspired computing, quantum matter, and topological systems."
+>
+  <PageIntro
+    eyebrow="Research areas"
+    title="Research"
+    description="My research follows a common question across systems and science: how can complex systems represent information, make decisions, and remain robust? The areas below move from production-scale retrieval to physics-inspired computation, engineered quantum matter, and topological systems."
+  />
+
+  <section aria-label="Research areas">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      {
+        researchAreas.map((area, index) => (
+          <article class="border-line grid gap-8 border-b py-12 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:items-center lg:gap-16 lg:py-16">
+            <figure class="border-line bg-surface overflow-hidden border">
+              <img
+                src={area.image.src}
+                alt={area.alt}
+                width={887}
+                height={444}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                class="aspect-[2/1] h-auto w-full object-cover transition-[filter] duration-200 dark:brightness-[0.88] dark:contrast-[1.05] dark:hue-rotate-180 dark:invert"
+              />
+            </figure>
+
+            <div>
+              <p class="text-ink-soft font-mono text-[11px] tracking-[0.18em] uppercase">
+                {String(index + 1).padStart(2, '0')} / {area.domain}
+              </p>
+              <h2 class="font-display text-ink mt-4 text-2xl leading-tight font-semibold tracking-[-0.015em] sm:text-3xl">
+                {area.title}
+              </h2>
+              <p class="text-ink-soft mt-5 max-w-2xl leading-8">{area.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section>
+    <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+      <p class="text-ink-soft max-w-2xl leading-7">
+        The publication record provides paper titles, authorship, venues, and public distinctions.
+      </p>
+      <a
+        href="/publications"
+        class="text-signal mt-4 inline-block font-mono text-xs hover:underline"
+      >
+        View publications →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -22,7 +22,9 @@ content, design, routing, or deployment changes.
 Public navigation is intentionally limited to:
 
 - `/` — home
+- `/research/` — research themes and connected research program
 - `/publications/` — publication record
+- `/news/` — selected recognition, talks, media, and research developments
 - `/about/` — background and working style
 - `/cv/` — concise web CV
 
@@ -32,8 +34,10 @@ desktop navigation, mobile navigation, homepage links, CV links, and the
 sitemap. They must retain `noindex, nofollow`. Do not delete their content and
 do not re-expose them without explicit user approval.
 
-The old `/research/` route was deliberately removed with no redirect. The
-canonical route is `/publications/`.
+`/research/` and `/publications/` have distinct purposes. Research synthesizes
+the major areas and intellectual through-lines; Publications remains the
+canonical paper record. Do not collapse one into the other without explicit
+user approval.
 
 ## Content and confidentiality rules
 
@@ -74,9 +78,12 @@ also removes the content from generated routes.
 
 - `src/site.config.ts` — identity, role, contact links, and public navigation.
 - `src/pages/index.astro` — homepage and featured publication selection.
-- `src/pages/publications.astro` — full publication record.
+- `src/pages/research.astro` — visual overview of the major research areas.
+- `src/pages/publications.astro` — curated publication record.
+- `src/pages/news.astro` — selected professional and research developments.
 - `src/pages/about.astro` — narrative, appointments, principles, education.
 - `src/pages/cv.astro` — web CV.
+- `src/assets/images/research/*` — generated research-area illustrations.
 - `src/content/publications/*.md` — publication metadata and homepage
   `featured` flags.
 - `src/content/work/*.md` and `src/content/writing/*.md` — preserved future

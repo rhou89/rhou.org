@@ -20,8 +20,8 @@ quantum technologies, with interdisciplinary research, engineering excellence,
 and technical leadership as the connecting capabilities.
 
 This is not a blog. Writing content and case studies exist in source, but the
-public product is an identity, publication, selected-news, background, and
-contact site.
+public product is an identity, research-theme, publication, selected-news,
+background, and contact site.
 
 ## Current public narrative
 
@@ -83,16 +83,17 @@ public UI. Repository metadata still correctly points to GitHub.
 | Route            | Purpose                                                             |
 | ---------------- | ------------------------------------------------------------------- |
 | `/`              | Identity, appointments, featured publications, positioning, contact |
-| `/publications/` | Full AI and Quantum publication record                              |
+| `/research/`     | Visual synthesis of the connected research areas                    |
+| `/publications/` | Curated AI and Quantum publication record                           |
 | `/news/`         | Selected recognition, talks, media, and research developments       |
 | `/about/`        | Professional narrative, appointments, principles, education         |
 | `/cv/`           | Concise web CV                                                      |
 | `/404.html`      | Branded not-found page                                              |
 
-Header navigation is `Publications`, `News`, `About`, and `CV`, with `Contact`
-linking to the homepage contact section. The footer contains copyright, Google
-Scholar, LinkedIn, and a back-to-top link. It deliberately has no promotional
-slogan.
+Header navigation is `Research`, `Publications`, `News`, `About`, and `CV`,
+with `Contact` linking to the homepage contact section. The footer contains
+copyright, Google Scholar, LinkedIn, and a back-to-top link. It deliberately
+has no promotional slogan.
 
 ### Preserved but hidden routes
 
@@ -104,9 +105,9 @@ These pages remain generated so their content can be polished later, but they
 are not part of the launch. They are absent from public entry points, excluded
 from the sitemap, and marked `noindex, nofollow`.
 
-The former `/research/` route was renamed to `/publications/` and then removed.
-There is deliberately no redirect because the site was still in its first
-release phase.
+`/research/` was reintroduced after the initial launch as a distinct visual
+overview of Ryan's research themes. It is not an alias or redirect for
+`/publications/`, which remains the canonical paper record.
 
 ## News policy
 
@@ -132,6 +133,41 @@ talks, six recognitions, three media-coverage entries, and two experimental
 realizations of previously proposed momentum-space Josephson dynamics. The
 WashU Physics Theory Seminar shown as `29 February` in the source screenshot is
 recorded as February 29, 2024; 2023 was not a leap year.
+
+## Research-page policy
+
+`/research/` uses the effective structure of the
+`sbryngelson/academic-website-template` research page—one representative image,
+one field title, and one concise explanation per area—translated into this
+site's quieter editorial-row language. It deliberately avoids the reference
+site's dense card grid, hover lift, shadows, and hard-coded light-only artwork.
+
+The four areas are:
+
+- **Retrieval & Recommendation at Scale** — multimodal retrieval, semantic
+  identifiers, causal decision-making, heterogeneous scaling, cold-start
+  discovery, and exploration at production scale.
+- **Physics-Inspired Intelligence & Optimization** — nonlinear and Ising-type
+  solvers, hybrid quantum-classical learning, and physics-guided computation.
+- **Synthetic Dimensions & Nonlinear Dynamics** — ultracold atoms,
+  momentum-space tunneling, superfluid order, spin transport, and
+  interaction-driven dynamics.
+- **Topological & Non-Hermitian Systems** — Majorana modes, spin-tensor
+  topology, hyperbolic and non-Hermitian photonics, and topological lasing.
+
+Each area uses a generated 2:1 raster illustration with a shared paper, ink,
+soft-slate, and signal-blue palette. Images contain no text or logos, use
+scientifically recognizable structures rather than stock or cyber imagery, and
+use an invert-and-hue-preserve treatment in dark mode so paper, ink, and signal
+blue retain the same hierarchy. The page uses the standard `PageIntro`,
+full-width image/text rows, fine horizontal rules, and a single quiet link to
+the publication record.
+
+Research copy was synthesized after reviewing the local publication collection
+and a larger cross-checked corpus from publisher, conference, arXiv, and
+institutional sources. Google Scholar access can be used for future membership
+and ordering checks; the Research page itself intentionally summarizes themes
+rather than claiming to enumerate every paper.
 
 ## Publication policy
 
@@ -221,6 +257,7 @@ Do not introduce arbitrary component hex values when a token already exists.
 - Astro 7 static site with TypeScript.
 - Tailwind CSS 4 through the Vite plugin.
 - Astro Content Collections for news, work, publications, and writing.
+- Astro's image pipeline optimizes the Research-page WebP source illustrations.
 - Astro Fonts API self-hosts Fraunces, Inter, and Space Mono at build time.
 - Astro sitemap integration with explicit launch-scope exclusions.
 - Astro ClientRouter for view transitions.

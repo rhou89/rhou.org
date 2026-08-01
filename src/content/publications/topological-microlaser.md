@@ -1,10 +1,10 @@
 ---
-title: Direct comparison of stochastic driven nonlinear dynamical systems for combinatorial optimization
-venue: Physical Review E
-year: 2025
-authorship: First author
-url: https://doi.org/10.1103/9vbb-h73q
-topics: [Quantum Technologies]
-featured: true
+title: Topological Microlaser with a Non-Hermitian Topological Bulk
+venue: Physical Review Letters
+year: 2023
+authorship: Co-author
+url: https://doi.org/10.1103/PhysRevLett.131.023202
+topics: [Quantum Technologies, Quantum Matter, Topology, Lasing]
+featured: false
 order: 4
 ---

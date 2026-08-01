@@ -38,9 +38,7 @@ const recentNews = (await getCollection('news'))
             class="border-line text-ink-soft rounded-full border px-3 py-1.5 font-mono text-[11px]"
             >AI Systems</span
           >
-          <a
-            href="/publications"
-            class="border-line text-ink-soft hover:border-signal hover:text-ink rounded-full border px-3 py-1.5 font-mono text-[11px] transition-colors"
+          <a class="border-line text-ink-soft rounded-full border px-3 py-1.5 font-mono text-[11px]"
             >Quantum Technologies</a
           >
         </div>
@@ -54,6 +52,7 @@ const recentNews = (await getCollection('news'))
           class="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs"
           aria-label="Profile links"
         >
+          <a href="/research" class="text-signal hover:underline">Research topics →</a>
           <a href="/publications" class="text-signal hover:underline">Publications →</a>
           <a href="/cv" class="text-signal hover:underline">CV →</a>
         </nav>
@@ -106,20 +105,24 @@ const recentNews = (await getCollection('news'))
         <p class="font-display text-ink mt-4 text-2xl leading-snug sm:text-3xl">
           Work across AI systems and quantum technologies.
         </p>
+        <p class="font-display text-ink mt-4 text-sm leading-snug sm:text-base">
+          Highlighted and awarded in top venues including Nat. Common., Phys. Rev. Lett., KDD and
+          SIGIR.
+        </p>
       </header>
 
       <div class="grid pt-10 lg:grid-cols-2">
         <div class="pb-10 lg:pr-10 lg:pb-0">
           <HomePublicationGroup
             title="AI Systems"
-            description="Retrieval, recommendation, and content distribution at production scale."
+            description="Recommendation and distribution at web scale; AI for science."
             entries={aiPublications}
           />
         </div>
         <div class="border-line border-t pt-10 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
           <HomePublicationGroup
             title="Quantum Technologies"
-            description="Quantum dynamics, matter, and topological photonics."
+            description="Quantum dynamics and matter; physics-informed computing and optimization."
             entries={quantumPublications}
           />
         </div>

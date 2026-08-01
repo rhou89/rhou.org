@@ -47,6 +47,8 @@ released until both its build and deploy jobs succeed.
 
 ## Content
 
+- `src/pages/research.astro` — public overview of the connected research areas
+- `src/assets/images/research/` — research-area illustrations used by that page
 - `src/content/work/` — retained technical and leadership case notes, hidden at launch
 - `src/content/publications/` — curated publication record
 - `src/content/news/` — dated professional updates with categories and source links
