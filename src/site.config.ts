@@ -21,6 +21,7 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: 'Publications', href: '/publications' },
+  { label: 'News', href: '/news' },
   { label: 'About', href: '/about' },
   { label: 'CV', href: '/cv' },
 ] as const;

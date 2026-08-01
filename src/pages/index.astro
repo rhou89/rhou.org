@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import HomeNewsRow from '@/components/HomeNewsRow.astro';
 import HomePublicationGroup from '@/components/HomePublicationGroup.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import { SITE } from '@/site.config';
@@ -12,6 +13,9 @@ const aiPublications = publications.filter((entry) => entry.data.topics.includes
 const quantumPublications = publications.filter(
   (entry) => !entry.data.topics.includes('AI Systems'),
 );
+const recentNews = (await getCollection('news'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 4);
 ---
 
 <BaseLayout title={SITE.name}>
@@ -126,6 +130,25 @@ const quantumPublications = publications.filter(
         class="text-signal mt-8 inline-block font-mono text-xs hover:underline"
         >View all publications →</a
       >
+    </div>
+  </section>
+
+  <section class="border-line border-b">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <header class="border-line border-b pb-8">
+        <h2 class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">News</h2>
+        <p class="font-display text-ink mt-4 text-2xl leading-snug sm:text-3xl">
+          Recent recognition, media, and research developments.
+        </p>
+      </header>
+
+      <div>
+        {recentNews.map((entry) => <HomeNewsRow entry={entry} />)}
+      </div>
+
+      <a href="/news" class="text-signal mt-8 inline-block font-mono text-xs hover:underline">
+        View all news →
+      </a>
     </div>
   </section>
 

@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '@/utils/formatDate';
+
+interface Props {
+  entry: CollectionEntry<'news'>;
+}
+
+const { entry } = Astro.props;
+const { date, category, summary } = entry.data;
+---
+
+<a
+  href={`/news/#${entry.id}`}
+  class="group border-line grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 border-b py-5 sm:grid-cols-[8.5rem_minmax(0,1fr)_auto] sm:gap-6"
+>
+  <time
+    datetime={date.toISOString().slice(0, 10)}
+    class="text-ink-soft group-hover:text-signal col-start-1 row-start-1 self-start font-mono text-[11px] tracking-wide uppercase transition-colors"
+  >
+    {formatDate(date, 'medium')}
+  </time>
+
+  <span
+    class="text-ink group-hover:text-signal col-span-2 row-start-2 max-w-3xl min-w-0 leading-7 sm:col-span-1 sm:col-start-2 sm:row-start-1"
+  >
+    {summary}
+  </span>
+
+  <span
+    class="border-line text-ink-soft col-start-2 row-start-1 self-start justify-self-end rounded-full border px-2.5 py-1 font-mono text-[10px] tracking-wide uppercase sm:col-start-3"
+  >
+    {category}
+  </span>
+</a>

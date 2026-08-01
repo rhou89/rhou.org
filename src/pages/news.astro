@@ -1,0 +1,141 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import NewsRow from '@/components/NewsRow.astro';
+import PageIntro from '@/components/PageIntro.astro';
+
+const news = (await getCollection('news')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const categoryOrder = ['Recognition', 'Talks', 'Media', 'Adoption'] as const;
+const categories = categoryOrder.filter((category) =>
+  news.some((entry) => entry.data.category === category),
+);
+
+const entriesByYear = new Map<number, typeof news>();
+for (const entry of news) {
+  const year = entry.data.date.getUTCFullYear();
+  const entries = entriesByYear.get(year) ?? [];
+  entries.push(entry);
+  entriesByYear.set(year, entries);
+}
+---
+
+<BaseLayout
+  title="News"
+  description="Selected news, recognition, talks, media coverage, and research developments from Ryan Hou."
+>
+  <PageIntro
+    eyebrow="Selected updates"
+    title="News"
+    description="A chronological record of selected recognition, talks, media, and ideas carried into practice."
+  />
+
+  <section
+    class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20"
+    aria-labelledby="news-filter-label"
+    data-news-timeline
+  >
+    <div class="border-line border-b pb-8">
+      <p
+        id="news-filter-label"
+        class="text-ink-soft font-mono text-[11px] tracking-[0.18em] uppercase"
+      >
+        Filter by type
+      </p>
+      <div class="mt-4 flex flex-wrap gap-2" role="group" aria-labelledby="news-filter-label">
+        <button
+          type="button"
+          data-news-filter="all"
+          aria-pressed="true"
+          class="border-line text-ink-soft hover:border-signal hover:text-ink aria-pressed:border-signal aria-pressed:text-signal cursor-pointer rounded-full border px-3 py-1.5 font-mono text-[11px] transition-colors"
+        >
+          All
+        </button>
+        {
+          categories.map((category) => (
+            <button
+              type="button"
+              data-news-filter={category.toLowerCase()}
+              aria-pressed="false"
+              class="border-line text-ink-soft hover:border-signal hover:text-ink aria-pressed:border-signal aria-pressed:text-signal cursor-pointer rounded-full border px-3 py-1.5 font-mono text-[11px] transition-colors"
+            >
+              {category}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div data-news-list>
+      {
+        Array.from(entriesByYear).map(([year, entries]) => (
+          <section
+            data-news-year
+            class="border-line grid gap-6 border-b py-10 last:border-b-0 lg:grid-cols-[14rem_1fr] lg:gap-10"
+            aria-labelledby={`news-${year}`}
+          >
+            <h2 id={`news-${year}`} class="font-display text-ink text-2xl leading-none sm:text-3xl">
+              {year}
+            </h2>
+            <div class="border-line border-t">
+              {entries.map((entry) => (
+                <NewsRow entry={entry} />
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function setupNewsFilters() {
+    const timeline = document.querySelector<HTMLElement>('[data-news-timeline]');
+    if (!timeline || timeline.dataset.filterReady === 'true') return;
+
+    timeline.dataset.filterReady = 'true';
+    const buttons = Array.from(timeline.querySelectorAll<HTMLButtonElement>('[data-news-filter]'));
+    const entries = Array.from(timeline.querySelectorAll<HTMLElement>('[data-news-entry]'));
+    const years = Array.from(timeline.querySelectorAll<HTMLElement>('[data-news-year]'));
+
+    const applyFilter = (filter: string) => {
+      buttons.forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.newsFilter === filter));
+      });
+
+      entries.forEach((entry) => {
+        entry.hidden = filter !== 'all' && entry.dataset.category !== filter;
+      });
+
+      years.forEach((year) => {
+        year.hidden = !Array.from(year.querySelectorAll<HTMLElement>('[data-news-entry]')).some(
+          (entry) => !entry.hidden,
+        );
+      });
+
+      const url = new URL(window.location.href);
+      if (filter === 'all') {
+        url.searchParams.delete('type');
+      } else {
+        url.searchParams.set('type', filter);
+      }
+      window.history.replaceState({}, '', url);
+    };
+
+    const requestedFilter = new URL(window.location.href).searchParams.get('type') ?? 'all';
+    const initialFilter = buttons.some((button) => button.dataset.newsFilter === requestedFilter)
+      ? requestedFilter
+      : 'all';
+    applyFilter(initialFilter);
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => applyFilter(button.dataset.newsFilter ?? 'all'));
+    });
+  }
+
+  document.addEventListener('astro:page-load', setupNewsFilters);
+  setupNewsFilters();
+</script>

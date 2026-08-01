@@ -51,4 +51,21 @@ const writing = defineCollection({
   }),
 });
 
-export const collections = { work, publications, writing };
+const news = defineCollection({
+  loader: glob({ base: './src/content/news', pattern: '**/*.md' }),
+  schema: z.object({
+    date: z.coerce.date(),
+    category: z.enum(['Recognition', 'Talks', 'Media', 'Adoption']),
+    summary: z.string().max(500),
+    links: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.url(),
+        }),
+      )
+      .default([]),
+  }),
+});
+
+export const collections = { work, publications, writing, news };

@@ -20,8 +20,8 @@ quantum technologies, with interdisciplinary research, engineering excellence,
 and technical leadership as the connecting capabilities.
 
 This is not a blog. Writing content and case studies exist in source, but the
-initial public release is an identity, publication, background, and contact
-site.
+public product is an identity, publication, selected-news, background, and
+contact site.
 
 ## Current public narrative
 
@@ -84,13 +84,15 @@ public UI. Repository metadata still correctly points to GitHub.
 | ---------------- | ------------------------------------------------------------------- |
 | `/`              | Identity, appointments, featured publications, positioning, contact |
 | `/publications/` | Full AI and Quantum publication record                              |
+| `/news/`         | Selected recognition, talks, media, and research developments       |
 | `/about/`        | Professional narrative, appointments, principles, education         |
 | `/cv/`           | Concise web CV                                                      |
 | `/404.html`      | Branded not-found page                                              |
 
-Header navigation is `Publications`, `About`, and `CV`, with `Contact` linking to
-the homepage contact section. The footer contains copyright, Google Scholar,
-LinkedIn, and a back-to-top link. It deliberately has no promotional slogan.
+Header navigation is `Publications`, `News`, `About`, and `CV`, with `Contact`
+linking to the homepage contact section. The footer contains copyright, Google
+Scholar, LinkedIn, and a back-to-top link. It deliberately has no promotional
+slogan.
 
 ### Preserved but hidden routes
 
@@ -105,6 +107,31 @@ from the sitemap, and marked `noindex, nofollow`.
 The former `/research/` route was renamed to `/publications/` and then removed.
 There is deliberately no redirect because the site was still in its first
 release phase.
+
+## News policy
+
+`/news/` is a compact chronological record rather than a blog. Entries are
+grouped by year, ordered newest first, and limited to a date, one or two factual
+sentences, one category, and optional source links. The current categories are
+`Recognition`, `Talks`, `Media`, and `Adoption`; the page displays only
+categories in use.
+
+Filtering happens in place with accessible buttons and a shareable `type` query
+parameter. Every entry also receives a stable anchor derived from its content
+filename. With JavaScript unavailable, the complete chronology remains visible.
+
+The homepage shows the four most recent entries automatically, immediately
+after Publications and before the closing positioning/contact section. These
+compact rows include only the date, summary, and category, and link to the
+entry's stable anchor on `/news/`; filters and external source links remain on
+the full News page. Do not create individual news-detail routes, category
+colors, social-sharing controls, or promotional cards without a clear need.
+
+The record currently contains thirteen updates from 2018–2026: two invited
+talks, six recognitions, three media-coverage entries, and two experimental
+realizations of previously proposed momentum-space Josephson dynamics. The
+WashU Physics Theory Seminar shown as `29 February` in the source screenshot is
+recorded as February 29, 2024; 2023 was not a leap year.
 
 ## Publication policy
 
@@ -130,6 +157,8 @@ visually distinct from the Fraunces publication titles below.
 
 Public distinctions included on the homepage:
 
+- `Deep-learning causal retrieval optimization for efficient e-commerce
+distribution in Pinterest` — Oral Presentation.
 - `Nonlinear dynamics in a synthetic momentum state lattice` — Editors'
   Suggestion.
 - `Momentum Space Josephson Effects` — Editors' Suggestion.
@@ -143,6 +172,11 @@ KDD 2026 causal-retrieval publication:
   site or source.
 - Old public commit history and old Actions artifacts may contain the phrase.
   The user explicitly chose not to purge them.
+
+The former 2023 `Topological Microlaser with a Non-Hermitian Topological Bulk`
+homepage entry was replaced by the 2025 Physical Review E paper `Direct
+comparison of stochastic driven nonlinear dynamical systems for combinatorial
+optimization`, linked through `https://doi.org/10.1103/9vbb-h73q`.
 
 ## Design language
 
@@ -186,7 +220,7 @@ Do not introduce arbitrary component hex values when a token already exists.
 
 - Astro 7 static site with TypeScript.
 - Tailwind CSS 4 through the Vite plugin.
-- Astro Content Collections for work, publications, and writing.
+- Astro Content Collections for news, work, publications, and writing.
 - Astro Fonts API self-hosts Fraunces, Inter, and Space Mono at build time.
 - Astro sitemap integration with explicit launch-scope exclusions.
 - Astro ClientRouter for view transitions.
@@ -195,7 +229,8 @@ Do not introduce arbitrary component hex values when a token already exists.
 
 Content is data-driven. Publication labels, distinctions, links, featured state,
 and order belong in `src/content/publications/*.md`, not hardcoded in page
-templates. Identity and navigation belong in `src/site.config.ts`.
+templates. News dates, categories, summaries, and source links belong in
+`src/content/news/*.md`. Identity and navigation belong in `src/site.config.ts`.
 
 ## Validation baseline
 
