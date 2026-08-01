@@ -25,9 +25,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `ccacbca`
+- Current consolidated baseline: `fa6cbbb`
 - Last verified Pages run:
-  `https://github.com/rhou89/rhou.org/actions/runs/30707479929`
+  `https://github.com/rhou89/rhou.org/actions/runs/30711387984`
 
 ## Ongoing task log
 
@@ -36,12 +36,12 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-01 | Established durable repository instructions, site context, project history, and future-task logging.                                                         | Documentation formatting, Astro check, and production build.                                                                                                  | Deployed in `ccacbca`; Pages run `30707479929`. |
 | 2026-08-01 | Reworked homepage publications into simple AI Systems and Quantum Technologies groups while retaining all seven papers and distinctions.                     | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, overflow, links, and metadata checks.                                  | Deployed in `ccacbca`; Pages run `30707479929`. |
 | 2026-08-01 | Refined homepage publication hierarchy so the section introduction stays on one desktop line and group headings remain distinct from paper rows.             | Formatting; Astro diagnostics; production build; desktop and mobile light/dark typography and overflow checks.                                                | Deployed in `ccacbca`; Pages run `30707479929`. |
-| 2026-08-01 | Added a data-driven News page with eight sourced updates, chronological year groups, category filters, stable anchors, and desktop/mobile navigation.        | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, filter, query-state, overflow, navigation, links, and metadata checks. | Local only; not deployed.                       |
-| 2026-08-01 | Added concise manual local-test, deployment, and future-agent handoff instructions to the README.                                                            | Documentation formatting and diff check.                                                                                                                      | Local only; not deployed.                       |
-| 2026-08-01 | Added four News updates covering KDD and RecSys oral selections, the David Daniel Thesis Award, and the 2021 realization of phase-driven Josephson dynamics. | Formatting; Astro diagnostics; production build; chronological order, category filtering, links, and rendered content checks.                                 | Local only; not deployed.                       |
-| 2026-08-01 | Added Q2B Studio’s coverage of the causal retrieval work to the News timeline.                                                                               | Formatting; Astro diagnostics; production build; chronological order, source link, and rendered content checks.                                               | Local only; not deployed.                       |
-| 2026-08-01 | Added a compact homepage News summary showing the four most recent updates after Publications, with stable links into the full timeline.                     | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, overflow, content order, links, and metadata checks.                   | Local only; not deployed.                       |
-| 2026-08-01 | Added the KDD 2026 Oral Presentation label and replaced the 2023 PRL homepage entry with the 2025 Physical Review E paper at the requested DOI.              | Formatting; Astro diagnostics; production build; desktop and mobile light/dark content, link, and overflow checks.                                            | Local only; not deployed.                       |
+| 2026-08-01 | Added a data-driven News page with eight sourced updates, chronological year groups, category filters, stable anchors, and desktop/mobile navigation.        | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, filter, query-state, overflow, navigation, links, and metadata checks. | Deployed in `fa6cbbb`; Pages run `30711387984`. |
+| 2026-08-01 | Added concise manual local-test, deployment, and future-agent handoff instructions to the README.                                                            | Documentation formatting and diff check.                                                                                                                      | Deployed in `fa6cbbb`; Pages run `30711387984`. |
+| 2026-08-01 | Added four News updates covering KDD and RecSys oral selections, the David Daniel Thesis Award, and the 2021 realization of phase-driven Josephson dynamics. | Formatting; Astro diagnostics; production build; chronological order, category filtering, links, and rendered content checks.                                 | Deployed in `fa6cbbb`; Pages run `30711387984`. |
+| 2026-08-01 | Added Q2B Studio’s coverage of the causal retrieval work to the News timeline.                                                                               | Formatting; Astro diagnostics; production build; chronological order, source link, and rendered content checks.                                               | Deployed in `fa6cbbb`; Pages run `30711387984`. |
+| 2026-08-01 | Added a compact homepage News summary showing the four most recent updates after Publications, with stable links into the full timeline.                     | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, overflow, content order, links, and metadata checks.                   | Deployed in `fa6cbbb`; Pages run `30711387984`. |
+| 2026-08-01 | Added the KDD 2026 Oral Presentation label and replaced the 2023 PRL homepage entry with the 2025 Physical Review E paper at the requested DOI.              | Formatting; Astro diagnostics; production build; desktop and mobile light/dark content, link, and overflow checks.                                            | Deployed in `fa6cbbb`; Pages run `30711387984`. |
 
 ## Milestones
 
@@ -63,25 +63,30 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `b578f24` | Restored the KDD 2026 arXiv link.                                                                             |
 | `b48112c` | Polished the final cross-domain copy punctuation and voice.                                                   |
 | `ccacbca` | Grouped homepage publications into distinct AI Systems and Quantum Technologies editorial columns.            |
+| `fa6cbbb` | Launched the News timeline and homepage summary, then refreshed featured publication details.                 |
 
 ## Current test baseline
 
-At `ccacbca`, the following were verified successfully:
+At `fa6cbbb`, the following were verified successfully:
 
-- Astro diagnostics: 25 files, 0 errors, 0 warnings, 0 hints.
-- Production static build: 11 generated pages.
+- Astro diagnostics: 28 files, 0 errors, 0 warnings, 0 hints.
+- Production static build: 12 generated pages.
 - Public route desktop and mobile layout checks at 1365x768 and 390x844.
 - No horizontal overflow on checked public routes.
-- Public navigation contains only Publications, About, CV, and Contact.
+- Public navigation contains only Publications, News, About, CV, and Contact.
 - No public links to Work or Writing.
 - `/publications/` is canonical; `/research/` is absent.
 - Hidden Work/Writing routes have `noindex, nofollow` and are absent from the
   sitemap.
+- `/news/` shows thirteen chronological entries with working category filters,
+  shareable query state, and stable anchors; the homepage shows the four newest.
 - Homepage shows all seven featured publications in AI Systems and Quantum
-  Technologies groups, with exactly three public editorial distinctions.
+  Technologies groups, with one oral-presentation label and three editorial
+  distinctions.
 - `2nd Best Paper` is absent from the current source and rendered pages.
 - KDD 2026 links to `https://arxiv.org/abs/2607.14161` on both the homepage and
-  Publications page.
+  Publications page, and the 2025 Physical Review E feature links to
+  `https://doi.org/10.1103/9vbb-h73q`.
 
 ## Deployment behavior and logs
 
