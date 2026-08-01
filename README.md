@@ -1,6 +1,6 @@
 # rhou.org
 
-Professional website of Ryan Hou, Ph.D. — technology leader and interdisciplinary scientist working across large-scale AI systems and quantum technologies.
+Professional website of Ryan (Junpeng) Hou — technology leader and interdisciplinary researcher working across large-scale AI systems and quantum technologies.
 
 ## Stack
 
@@ -12,23 +12,32 @@ Professional website of Ryan Hou, Ph.D. — technology leader and interdisciplin
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
 Production checks:
 
 ```bash
-npm run build
 npm run format:check
+npm run check
+npm run build
 ```
+
+Node.js 22 or newer is required.
 
 ## Content
 
-- `src/content/work/` — selected technical and leadership case notes
+- `src/content/work/` — retained technical and leadership case notes, hidden at launch
 - `src/content/publications/` — curated publication record
-- `src/content/writing/` — selected external essays
+- `src/content/writing/` — retained external essays, hidden at launch
 - `src/site.config.ts` — identity, positioning, links, and navigation
+
+## Project documentation
+
+- `AGENTS.md` — repository-wide instructions for future Codex tasks
+- `docs/SITE_CONTEXT.md` — product, design, content, architecture, and testing context
+- `docs/PROJECT_LOG.md` — ongoing task, milestone, validation, deployment, and known-issue log; update it after every task
 
 ## Deployment
 

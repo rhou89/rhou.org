@@ -1,13 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import PublicationRow from '@/components/PublicationRow.astro';
+import HomePublicationGroup from '@/components/HomePublicationGroup.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import { SITE } from '@/site.config';
 
 const publications = (await getCollection('publications'))
   .filter((entry) => entry.data.featured)
   .sort((a, b) => a.data.order - b.data.order);
+const aiPublications = publications.filter((entry) => entry.data.topics.includes('AI Systems'));
+const quantumPublications = publications.filter(
+  (entry) => !entry.data.topics.includes('AI Systems'),
+);
 ---
 
 <BaseLayout title={SITE.name}>
@@ -92,23 +96,36 @@ const publications = (await getCollection('publications'))
   </section>
 
   <section class="border-line border-y">
-    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[15rem_1fr]">
-      <div>
-        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Publications</p>
-        <h2 class="font-display text-ink mt-5 text-2xl leading-tight sm:text-3xl">
-          Across disciplines
-        </h2>
-        <p class="text-ink-soft mt-4 text-sm leading-relaxed">
-          Selected work spanning recommender systems, quantum information, nonlinear dynamics, and
-          photonics.
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <header class="border-line border-b pb-8">
+        <h2 class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Publications</h2>
+        <p class="font-display text-ink mt-4 text-2xl leading-snug sm:text-3xl">
+          Work across AI systems and quantum technologies.
         </p>
-        <a
-          href="/publications"
-          class="text-signal mt-6 inline-block font-mono text-xs hover:underline"
-          >View all publications →</a
-        >
+      </header>
+
+      <div class="grid pt-10 lg:grid-cols-2">
+        <div class="pb-10 lg:pr-10 lg:pb-0">
+          <HomePublicationGroup
+            title="AI Systems"
+            description="Retrieval, recommendation, and content distribution at production scale."
+            entries={aiPublications}
+          />
+        </div>
+        <div class="border-line border-t pt-10 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+          <HomePublicationGroup
+            title="Quantum Technologies"
+            description="Quantum dynamics, matter, and topological photonics."
+            entries={quantumPublications}
+          />
+        </div>
       </div>
-      <div>{publications.map((entry) => <PublicationRow entry={entry} />)}</div>
+
+      <a
+        href="/publications"
+        class="text-signal mt-8 inline-block font-mono text-xs hover:underline"
+        >View all publications →</a
+      >
     </div>
   </section>
 
