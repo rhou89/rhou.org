@@ -14,7 +14,7 @@ export const SITE = {
     'Machine Learning Tech Lead at Pinterest · Visiting Researcher in Quantum Computing at Washington University in St. Louis',
   social: [
     { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=mJJxP8EAAAAJ' },
-    { label: 'GitHub', href: 'https://github.com/rhou89' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ryanjhou/' },
   ],
   locale: 'en',
 } as const;
