@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* Make the `dark:` variant respond to a `.dark` class instead of OS
+   preference, so the toggle in <ThemeToggle /> can override the system. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------
+   Design tokens (light values). Edit these five colors to re-skin the
+   entire site — every component reads from the tokens below, nothing
+   hardcodes a hex value.
+   --------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  --paper: #f7f8f6; /* page background */
+  --ink: #111724; /* primary text */
+  --ink-soft: #5c6472; /* secondary text */
+  --signal: #2457f5; /* the one accent color */
+  --line: #dfe3e6; /* borders, rules */
+  --surface: #eef1f1; /* cards, raised panels */
+}
+
+.dark {
+  color-scheme: dark;
+
+  --paper: #0b0f17;
+  --ink: #f1f4f5;
+  --ink-soft: #98a2b1;
+  --signal: #6f92ff;
+  --line: #242b38;
+  --surface: #121923;
+}
+
+/* `inline` keeps these resolving against the live --paper/--ink/etc custom
+   properties above at runtime, instead of Tailwind inlining a static value
+   at build time — required for the .dark class swap to work. */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-signal: var(--signal);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+
+  /* Astro's Fonts API exposes the loaded families on --ff-* (see
+     astro.config.mjs). These map them to font-display / font-body /
+     font-mono utility classes. */
+  --font-display: var(--ff-display);
+  --font-body: var(--ff-body);
+  --font-mono: var(--ff-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-signal);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    body {
+      transition:
+        background-color 200ms ease,
+        color 200ms ease;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+.hero-field::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--line) 48%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--line) 34%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to right, transparent 4%, black 55%, transparent 100%);
+  opacity: 0.5;
+}
+
+.hero-field::after {
+  position: absolute;
+  top: -8rem;
+  right: 3%;
+  width: 34rem;
+  height: 34rem;
+  content: '';
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--signal) 13%, transparent),
+    transparent 68%
+  );
+}
+
+.hero-field > * {
+  position: relative;
+  z-index: 1;
+}
+
+.orbit-mark {
+  position: relative;
+  width: 5.25rem;
+  height: 5.25rem;
+}
+
+.orbit-mark span {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+}
+
+.orbit-mark span:nth-child(1) {
+  transform: rotate(58deg) scaleX(0.38);
+}
+
+.orbit-mark span:nth-child(2) {
+  transform: rotate(-58deg) scaleX(0.38);
+}
+
+.orbit-mark span:nth-child(3) {
+  border-color: var(--color-signal);
+  transform: scale(0.11);
+  background: var(--color-signal);
+}
+
+/* Tune @tailwindcss/typography to use the site's tokens instead of its
+   default gray scale, so rendered Markdown matches the rest of the page. */
+.prose {
+  --tw-prose-body: var(--color-ink-soft);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-links: var(--color-signal);
+  --tw-prose-bullets: var(--color-signal);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-signal);
+  --tw-prose-code: var(--color-ink);
+}
+.prose :where(h2, h3, h4) {
+  font-family: var(--font-display);
+}
+.prose :where(a) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}

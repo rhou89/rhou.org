@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PublicationRow from '@/components/PublicationRow.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+
+const publications = (await getCollection('publications')).sort(
+  (a, b) => b.data.year - a.data.year || a.data.order - b.data.order,
+);
+const ai = publications.filter((entry) => entry.data.topics.includes('AI Systems'));
+const quantum = publications.filter((entry) => !entry.data.topics.includes('AI Systems'));
+---
+
+<BaseLayout
+  title="Research"
+  description="Selected research by Ryan Hou across AI systems, quantum information, nonlinear dynamics, and photonics."
+>
+  <section class="mx-auto max-w-6xl px-5 pt-16 pb-20 sm:px-8 sm:pt-24">
+    <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Research</p>
+    <h1 class="font-display text-ink mt-5 max-w-4xl text-4xl leading-tight sm:text-6xl">
+      Research across intelligent systems and the physical world.
+    </h1>
+    <p class="text-ink-soft mt-6 max-w-2xl leading-relaxed">
+      My publication record spans industrial recommender systems, quantum information, nonlinear
+      dynamics, topological photonics, and quantum matter.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a
+        href="https://scholar.google.com/citations?user=mJJxP8EAAAAJ"
+        target="_blank"
+        rel="noreferrer"
+        class="bg-ink text-paper hover:bg-signal rounded-full px-5 py-2.5 text-sm font-medium transition-colors"
+        >Full record on Google Scholar ↗</a
+      >
+    </div>
+  </section>
+
+  <section class="border-line border-t">
+    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[15rem_1fr]">
+      <div>
+        <p class="text-signal font-mono text-[11px] tracking-[0.18em] uppercase">01 / AI Systems</p>
+        <h2 class="font-display text-ink mt-4 text-3xl">
+          Recommendation, retrieval & distribution
+        </h2>
+      </div>
+      <div>
+        <SectionHeading eyebrow="Selected publications" count={ai.length} />{
+          ai.map((entry) => <PublicationRow entry={entry} />)
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-line bg-surface/55 border-y">
+    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[15rem_1fr]">
+      <div>
+        <p class="text-signal font-mono text-[11px] tracking-[0.18em] uppercase">02 / Quantum</p>
+        <h2 class="font-display text-ink mt-4 text-3xl">Information, matter & photonics</h2>
+      </div>
+      <div>
+        <SectionHeading eyebrow="Selected publications" count={quantum.length} />{
+          quantum.map((entry) => <PublicationRow entry={entry} />)
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

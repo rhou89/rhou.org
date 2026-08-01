@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '@/utils/formatDate';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { title, summary, date, tags, eyebrow, impact } = entry.data;
+
+const stamp = formatDate(date, 'compact');
+---
+
+<a
+  href={`/work/${entry.id}`}
+  class="group border-line hover:border-signal grid gap-4 border-b py-6 transition-colors sm:grid-cols-[6.5rem_1fr_auto] sm:items-center sm:gap-7"
+>
+  <span class="text-ink-soft flex items-center gap-2 font-mono text-[11px] uppercase">
+    <span>{stamp}</span><span class="text-line">/</span><span>{eyebrow}</span>
+  </span>
+
+  <span class="min-w-0">
+    <span
+      class="font-display text-ink group-hover:text-signal block text-lg leading-snug transition-colors sm:text-xl"
+    >
+      {title}
+    </span>
+    <span class="text-ink-soft mt-1 block max-w-2xl text-sm leading-relaxed">{summary}</span>
+  </span>
+
+  <span class="flex items-center justify-between gap-4 sm:justify-end">
+    {impact && <span class="text-signal font-mono text-xs sm:hidden">{impact}</span>}
+    <span class="text-ink-soft hidden font-mono text-[11px] md:block">
+      {impact ?? tags.slice(0, 2).join(' · ')}
+    </span>
+    <span
+      aria-hidden="true"
+      class="text-ink-soft group-hover:text-signal transition-all group-hover:translate-x-1"
+    >
+      →
+    </span>
+  </span>
+</a>

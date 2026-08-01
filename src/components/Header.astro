@@ -1,0 +1,74 @@
+---
+import ThemeToggle from '@/components/ThemeToggle.astro';
+import { SITE, NAV_LINKS } from '@/site.config';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-line bg-paper/90 sticky top-0 z-40 border-b backdrop-blur-xl">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
+    <a href="/" class="group flex items-center gap-3" aria-label="Ryan Hou — home">
+      <span
+        class="border-line bg-surface text-ink group-hover:border-signal grid h-9 w-9 place-items-center rounded-full border font-mono text-[11px] transition-colors"
+        >RH</span
+      >
+      <span class="font-display text-ink hidden text-lg font-medium sm:inline">
+        {SITE.shortName}
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-5 md:flex" aria-label="Primary">
+      {
+        NAV_LINKS.map((link) => {
+          const isActive = currentPath === link.href || currentPath.startsWith(`${link.href}/`);
+          return (
+            <a
+              href={link.href}
+              aria-current={isActive ? 'page' : undefined}
+              class:list={[
+                'font-mono text-xs tracking-wide uppercase transition-colors',
+                isActive ? 'text-signal' : 'text-ink-soft hover:text-ink',
+              ]}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+    <div class="flex items-center gap-2">
+      <a
+        href="/#contact"
+        class="border-line text-ink hover:border-signal hidden rounded-full border px-4 py-2 font-mono text-[11px] tracking-wide uppercase transition-colors sm:inline-flex"
+        >Contact</a
+      >
+      <ThemeToggle />
+      <details class="group relative md:hidden">
+        <summary
+          class="border-line text-ink grid h-9 cursor-pointer list-none place-items-center rounded-full border px-3 font-mono text-[11px] uppercase [&::-webkit-details-marker]:hidden"
+          >Menu</summary
+        >
+        <nav
+          class="border-line bg-paper absolute right-0 mt-2 flex min-w-44 flex-col rounded-2xl border p-2 shadow-xl"
+          aria-label="Mobile primary"
+        >
+          {
+            NAV_LINKS.map((link) => (
+              <a
+                href={link.href}
+                class="text-ink-soft hover:bg-surface hover:text-ink rounded-xl px-4 py-3 font-mono text-xs uppercase transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+          <a
+            href="/#contact"
+            class="text-signal hover:bg-surface rounded-xl px-4 py-3 font-mono text-xs uppercase transition-colors"
+            >Contact</a
+          >
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

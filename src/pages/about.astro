@@ -1,0 +1,113 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/Button.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import { SITE } from '@/site.config';
+
+const principles = [
+  ['Think from first principles', 'Understand the mechanism before optimizing the metric.'],
+  [
+    'Move between layers',
+    'Connect research, modeling, infrastructure, product, and organizational execution.',
+  ],
+  [
+    'Build for measurable impact',
+    'A strong idea matters most when it survives contact with the real world.',
+  ],
+];
+---
+
+<BaseLayout
+  title="About"
+  description={`About ${SITE.name}, technology leader and interdisciplinary scientist.`}
+>
+  <section class="mx-auto max-w-6xl px-5 pt-16 pb-20 sm:px-8 sm:pt-24">
+    <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">About</p>
+    <h1 class="font-display text-ink max-w-4xl text-4xl leading-tight font-medium sm:text-6xl">
+      A nonlinear path across computer science, quantum physics, and production AI.
+    </h1>
+
+    <div class="mt-14 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
+      <div>
+        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">
+          Current appointments
+        </p>
+        <dl class="mt-6 space-y-6">
+          <div>
+            <dt class="font-display text-ink text-xl">Pinterest</dt><dd
+              class="text-ink-soft mt-1 text-sm"
+            >
+              Tech Lead, Machine Learning<br />Closeup retrieval & pre-ranking
+            </dd>
+          </div>
+          <div>
+            <dt class="font-display text-ink text-xl">Washington University in St. Louis</dt><dd
+              class="text-ink-soft mt-1 text-sm"
+            >
+              Visiting Researcher<br />Quantum computing & sensing
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="prose prose-base max-w-2xl">
+        <p>
+          I was trained first in computer science, then in quantum and computational physics. Today
+          I lead machine-learning systems at Pinterest while continuing interdisciplinary research
+          in quantum technologies.
+        </p>
+        <p>
+          Across Pinterest, Meta, Microsoft Research, and academia, the common thread has been
+          building rigorous solutions to complex problems—whether the output is a production
+          recommender system, a quantum-inspired optimizer, or a new scientific result.
+        </p>
+        <p>
+          I am most energized by work that crosses traditional boundaries: theory and execution,
+          science and product, individual depth and team leadership. I care about asking the right
+          question, making the technical structure legible, and helping a group move from an idea to
+          an outcome.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-line bg-surface/55 border-y">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+      <SectionHeading eyebrow="How I work" />
+      <div class="grid gap-5 md:grid-cols-3">
+        {
+          principles.map(([title, description], index) => (
+            <article class="border-line bg-paper rounded-2xl border p-6">
+              <p class="text-signal font-mono text-[11px]">0{index + 1}</p>
+              <h2 class="font-display text-ink mt-7 text-2xl">{title}</h2>
+              <p class="text-ink-soft mt-3 text-sm leading-relaxed">{description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+      <div>
+        <SectionHeading eyebrow="Education" />
+        <p class="font-display text-ink text-xl">Ph.D. in Physics</p>
+        <p class="text-ink-soft mt-1 text-sm">
+          Quantum & Computational Physics · The University of Texas at Dallas · 2021
+        </p>
+        <p class="font-display text-ink mt-7 text-xl">B.E. in Computer Science</p>
+        <p class="text-ink-soft mt-1 text-sm">
+          Nanjing University of Aeronautics and Astronautics · 2016
+        </p>
+      </div>
+      <div>
+        <SectionHeading eyebrow="Start a conversation" />
+        <p class="font-display text-ink max-w-xl text-2xl leading-snug">
+          Research collaborations, technical leadership, and deep-technology translation are all
+          good reasons to reach out.
+        </p>
+        <Button href={`mailto:${SITE.email}`} class="mt-7">Email Ryan →</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

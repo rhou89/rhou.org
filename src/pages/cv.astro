@@ -1,0 +1,104 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import { SITE } from '@/site.config';
+
+const experience = [
+  {
+    years: '2023—Now',
+    company: 'Pinterest',
+    role: 'Tech Lead, Machine Learning',
+    detail: 'Closeup candidates, retrieval, pre-ranking & product enablement',
+  },
+  {
+    years: '2026—Now',
+    company: 'Washington University in St. Louis',
+    role: 'Visiting Researcher',
+    detail: 'Quantum computing, AI-enhanced quantum sensing & translation',
+  },
+  {
+    years: '2021—2023',
+    company: 'Meta',
+    role: 'Research Scientist, Machine Learning',
+    detail: 'Marketplace ranking & retrieval',
+  },
+  {
+    years: '2020—2021',
+    company: 'Microsoft Research',
+    role: 'Research Intern / Visiting Researcher',
+    detail: 'Azure Quantum & quantum-inspired optimization',
+  },
+  {
+    years: '2016—2021',
+    company: 'The University of Texas at Dallas',
+    role: 'Research Assistant',
+    detail: 'Quantum and computational physics',
+  },
+];
+---
+
+<BaseLayout
+  title="CV"
+  description="Experience, education, and professional profile of Ryan Hou, Ph.D."
+>
+  <section class="mx-auto max-w-6xl px-5 pt-16 pb-24 sm:px-8 sm:pt-24">
+    <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Curriculum vitae</p>
+        <h1 class="font-display text-ink mt-5 text-5xl sm:text-7xl">Ryan Hou, Ph.D.</h1>
+        <p class="text-ink-soft mt-4 text-lg">Technology Leader & Interdisciplinary Scientist</p>
+      </div>
+      <div class="font-mono text-xs leading-7 md:text-right">
+        <a href={`mailto:${SITE.email}`} class="text-signal hover:underline">{SITE.email}</a><br />
+        <a
+          href="https://scholar.google.com/citations?user=mJJxP8EAAAAJ"
+          target="_blank"
+          rel="noreferrer"
+          class="text-ink-soft hover:text-signal">Google Scholar ↗</a
+        >
+      </div>
+    </div>
+
+    <div class="mt-16 grid gap-14 lg:grid-cols-[1fr_2fr] lg:gap-24">
+      <div>
+        <SectionHeading eyebrow="Profile" />
+        <p class="text-ink-soft leading-relaxed">
+          Lead scientist and engineer specializing in applied machine learning and quantum
+          computing, with a track record spanning Pinterest, Meta, Microsoft Research, and academia.
+        </p>
+        <div class="mt-12">
+          <SectionHeading eyebrow="Education" />
+          <p class="font-display text-ink text-xl">Ph.D. · Physics</p>
+          <p class="text-ink-soft mt-1 text-sm">The University of Texas at Dallas, 2021</p>
+          <p class="font-display text-ink mt-6 text-xl">B.E. · Computer Science</p>
+          <p class="text-ink-soft mt-1 text-sm">
+            Nanjing University of Aeronautics and Astronautics, 2016
+          </p>
+        </div>
+      </div>
+      <div>
+        <SectionHeading eyebrow="Experience" />
+        <div>
+          {
+            experience.map((item) => (
+              <article class="border-line grid gap-2 border-b py-6 sm:grid-cols-[7rem_1fr] sm:gap-6">
+                <p class="text-ink-soft font-mono text-[11px] uppercase">{item.years}</p>
+                <div>
+                  <>
+                    <h2 class="font-display text-ink text-xl">{item.company}</h2>
+                    <p class="text-signal mt-1 text-sm">{item.role}</p>
+                    <p class="text-ink-soft mt-1 text-sm">{item.detail}</p>
+                  </>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4 font-mono text-xs">
+          <a href="/research" class="text-signal hover:underline">Selected publications →</a>
+          <a href="/work" class="text-signal hover:underline">Selected work →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

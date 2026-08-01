@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import WritingRow from '@/components/WritingRow.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+
+const writing = (await getCollection('writing')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Writing"
+  description="Selected essays by Ryan Hou on research, careers, AI, and the future of science."
+>
+  <section class="mx-auto max-w-6xl px-5 pt-16 pb-24 sm:px-8 sm:pt-24">
+    <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Writing</p>
+    <h1 class="font-display text-ink mt-5 max-w-4xl text-4xl leading-tight sm:text-6xl">
+      Long-form thinking, kept deliberately separate from the main signal.
+    </h1>
+    <p class="text-ink-soft mt-6 max-w-2xl leading-relaxed">
+      This is not a blog feed. It is a small, curated archive of essays that reveal how I think
+      about research, career choices, and science in the age of AI. The original pieces are in
+      Chinese.
+    </p>
+    <div class="mt-16"><SectionHeading eyebrow="Selected essays" count={writing.length} /></div>
+    <div>{writing.map((entry) => <WritingRow entry={entry} />)}</div>
+    <p class="text-ink-soft mt-8 text-sm">
+      Earlier writing remains available at <a
+        class="text-signal hover:underline"
+        href="https://blog.qisland.org"
+        target="_blank"
+        rel="noreferrer">blog.qisland.org ↗</a
+      >.
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #111724; }
+    .ring { fill: none; stroke: #6f92ff; }
+    .type { fill: #f1f4f5; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f7f8f6; }
+      .ring { stroke: #2457f5; }
+      .type { fill: #111724; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="16" />
+  <circle class="ring" cx="16" cy="16" r="14.5" />
+  <text class="type" x="16" y="19" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="600">RH</text>
+</svg>
