@@ -25,18 +25,17 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `b48112c`
-- Last verified Pages run before this documentation pass:
-  `https://github.com/rhou89/rhou.org/actions/runs/30702660644`
-- Working tree was clean before these documentation files were added.
+- Current consolidated baseline: `ccacbca`
+- Last verified Pages run:
+  `https://github.com/rhou89/rhou.org/actions/runs/30707479929`
 
 ## Ongoing task log
 
-| Date       | Scope                                                                                                                                            | Validation                                                                                                                   | Release status                            |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| 2026-08-01 | Established durable repository instructions, site context, project history, and future-task logging.                                             | Documentation formatting, Astro check, and production build.                                                                 | Local only; production remains `b48112c`. |
-| 2026-08-01 | Reworked homepage publications into simple AI Systems and Quantum Technologies groups while retaining all seven papers and distinctions.         | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, overflow, links, and metadata checks. | Local only; production remains `b48112c`. |
-| 2026-08-01 | Refined homepage publication hierarchy so the section introduction stays on one desktop line and group headings remain distinct from paper rows. | Formatting; Astro diagnostics; production build; desktop and mobile light/dark typography and overflow checks.               | Local only; production remains `b48112c`. |
+| Date       | Scope                                                                                                                                            | Validation                                                                                                                   | Release status                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| 2026-08-01 | Established durable repository instructions, site context, project history, and future-task logging.                                             | Documentation formatting, Astro check, and production build.                                                                 | Deployed in `ccacbca`; Pages run `30707479929`. |
+| 2026-08-01 | Reworked homepage publications into simple AI Systems and Quantum Technologies groups while retaining all seven papers and distinctions.         | Formatting; Astro diagnostics; production build; desktop and mobile light/dark layout, overflow, links, and metadata checks. | Deployed in `ccacbca`; Pages run `30707479929`. |
+| 2026-08-01 | Refined homepage publication hierarchy so the section introduction stays on one desktop line and group headings remain distinct from paper rows. | Formatting; Astro diagnostics; production build; desktop and mobile light/dark typography and overflow checks.               | Deployed in `ccacbca`; Pages run `30707479929`. |
 
 ## Milestones
 
@@ -57,12 +56,13 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `262fe5c` | Removed the embargoed KDD distinction and featured three public editorial distinctions on the homepage.       |
 | `b578f24` | Restored the KDD 2026 arXiv link.                                                                             |
 | `b48112c` | Polished the final cross-domain copy punctuation and voice.                                                   |
+| `ccacbca` | Grouped homepage publications into distinct AI Systems and Quantum Technologies editorial columns.            |
 
 ## Current test baseline
 
-At `b48112c`, the following were verified successfully:
+At `ccacbca`, the following were verified successfully:
 
-- Astro diagnostics: 24 files, 0 errors, 0 warnings, 0 hints.
+- Astro diagnostics: 25 files, 0 errors, 0 warnings, 0 hints.
 - Production static build: 11 generated pages.
 - Public route desktop and mobile layout checks at 1365x768 and 390x844.
 - No horizontal overflow on checked public routes.
@@ -71,8 +71,8 @@ At `b48112c`, the following were verified successfully:
 - `/publications/` is canonical; `/research/` is absent.
 - Hidden Work/Writing routes have `noindex, nofollow` and are absent from the
   sitemap.
-- Homepage shows seven featured publications and exactly three public editorial
-  distinctions.
+- Homepage shows all seven featured publications in AI Systems and Quantum
+  Technologies groups, with exactly three public editorial distinctions.
 - `2nd Best Paper` is absent from the current source and rendered pages.
 - KDD 2026 links to `https://arxiv.org/abs/2607.14161` on both the homepage and
   Publications page.
