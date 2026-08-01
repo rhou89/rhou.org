@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import { SITE } from '@/site.config';
 
@@ -41,25 +42,24 @@ const experience = [
   title="CV"
   description="Experience, education, and professional profile of Ryan Hou, Ph.D."
 >
-  <section class="mx-auto max-w-6xl px-5 pt-16 pb-24 sm:px-8 sm:pt-24">
-    <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-      <div>
-        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Curriculum vitae</p>
-        <h1 class="font-display text-ink mt-5 text-5xl sm:text-7xl">Ryan Hou, Ph.D.</h1>
-        <p class="text-ink-soft mt-4 text-lg">Technology Leader & Interdisciplinary Scientist</p>
-      </div>
-      <div class="font-mono text-xs leading-7 md:text-right">
-        <a href={`mailto:${SITE.email}`} class="text-signal hover:underline">{SITE.email}</a><br />
-        <a
-          href="https://scholar.google.com/citations?user=mJJxP8EAAAAJ"
-          target="_blank"
-          rel="noreferrer"
-          class="text-ink-soft hover:text-signal">Google Scholar ↗</a
-        >
-      </div>
+  <PageIntro
+    eyebrow="Curriculum vitae"
+    title="Ryan Hou, Ph.D."
+    description="Technology Leader & Interdisciplinary Scientist"
+  >
+    <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
+      <a href={`mailto:${SITE.email}`} class="text-signal hover:underline">{SITE.email}</a>
+      <a
+        href="https://scholar.google.com/citations?user=mJJxP8EAAAAJ"
+        target="_blank"
+        rel="noreferrer"
+        class="text-ink-soft hover:text-signal">Google Scholar ↗</a
+      >
     </div>
+  </PageIntro>
 
-    <div class="mt-16 grid gap-14 lg:grid-cols-[1fr_2fr] lg:gap-24">
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="grid gap-14 lg:grid-cols-[1fr_2fr] lg:gap-24">
       <div>
         <SectionHeading eyebrow="Profile" />
         <p class="text-ink-soft leading-relaxed">
@@ -84,11 +84,9 @@ const experience = [
               <article class="border-line grid gap-2 border-b py-6 sm:grid-cols-[7rem_1fr] sm:gap-6">
                 <p class="text-ink-soft font-mono text-[11px] uppercase">{item.years}</p>
                 <div>
-                  <>
-                    <h2 class="font-display text-ink text-xl">{item.company}</h2>
-                    <p class="text-signal mt-1 text-sm">{item.role}</p>
-                    <p class="text-ink-soft mt-1 text-sm">{item.detail}</p>
-                  </>
+                  <h2 class="font-display text-ink text-xl">{item.company}</h2>
+                  <p class="text-ink mt-1 text-sm">{item.role}</p>
+                  <p class="text-ink-soft mt-1 text-sm">{item.detail}</p>
                 </div>
               </article>
             ))

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
 import WorkRow from '@/components/WorkRow.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 
@@ -13,18 +14,14 @@ const allWork = (await getCollection('work', ({ data }) => !data.draft)).sort(
   title="Work"
   description="Selected work by Ryan Hou across large-scale AI systems, technical leadership, and quantum technologies."
 >
-  <section class="mx-auto max-w-6xl px-5 pt-16 pb-24 sm:px-8 sm:pt-24">
-    <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">Selected work</p>
-    <h1 class="font-display text-ink mt-5 max-w-4xl text-4xl leading-tight sm:text-6xl">
-      Leading complex systems from technical direction to measurable outcomes.
-    </h1>
-    <p class="text-ink-soft mt-6 max-w-2xl leading-relaxed">
-      A curated view of work across recommendation systems, generative retrieval, causal
-      optimization, and quantum computing. Details are limited to publicly shareable context.
-    </p>
-    <div class="mt-16"><SectionHeading eyebrow="Case notes" count={allWork.length} /></div>
-    <div>
-      {allWork.map((entry) => <WorkRow entry={entry} />)}
-    </div>
+  <PageIntro
+    eyebrow="Work"
+    title="Selected work"
+    description="Technical and leadership work across recommendation systems, generative retrieval, causal optimization, and quantum computing. Details are limited to publicly shareable context."
+  />
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <SectionHeading eyebrow="Case notes" count={allWork.length} />
+    <div>{allWork.map((entry) => <WorkRow entry={entry} />)}</div>
   </section>
 </BaseLayout>

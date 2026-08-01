@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Button from '@/components/Button.astro';
+import PageIntro from '@/components/PageIntro.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import { SITE } from '@/site.config';
 
@@ -21,29 +21,28 @@ const principles = [
   title="About"
   description={`About ${SITE.name}, technology leader and interdisciplinary scientist.`}
 >
-  <section class="mx-auto max-w-6xl px-5 pt-16 pb-20 sm:px-8 sm:pt-24">
-    <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">About</p>
-    <h1 class="font-display text-ink max-w-4xl text-4xl leading-tight font-medium sm:text-6xl">
-      A nonlinear path across computer science, quantum physics, and production AI.
-    </h1>
+  <PageIntro
+    eyebrow="About"
+    title="A nonlinear path"
+    description="My path has moved from computer science to quantum physics and back to production AI. That range continues to shape how I approach technical work, research, and leadership."
+  />
 
-    <div class="mt-14 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
       <div>
-        <p class="text-ink-soft font-mono text-xs tracking-[0.2em] uppercase">
+        <p class="text-ink-soft font-mono text-[11px] tracking-[0.18em] uppercase">
           Current appointments
         </p>
         <dl class="mt-6 space-y-6">
           <div>
-            <dt class="font-display text-ink text-xl">Pinterest</dt><dd
-              class="text-ink-soft mt-1 text-sm"
-            >
+            <dt class="font-display text-ink text-xl">Pinterest</dt>
+            <dd class="text-ink-soft mt-1 text-sm leading-relaxed">
               Tech Lead, Machine Learning<br />Closeup retrieval & pre-ranking
             </dd>
           </div>
-          <div>
-            <dt class="font-display text-ink text-xl">Washington University in St. Louis</dt><dd
-              class="text-ink-soft mt-1 text-sm"
-            >
+          <div class="border-line border-t pt-6">
+            <dt class="font-display text-ink text-xl">Washington University in St. Louis</dt>
+            <dd class="text-ink-soft mt-1 text-sm leading-relaxed">
               Visiting Researcher<br />Quantum computing & sensing
             </dd>
           </div>
@@ -70,16 +69,16 @@ const principles = [
     </div>
   </section>
 
-  <section class="border-line bg-surface/55 border-y">
-    <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+  <section class="border-line border-y">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <SectionHeading eyebrow="How I work" />
-      <div class="grid gap-5 md:grid-cols-3">
+      <div class="grid gap-8 md:grid-cols-3 md:gap-10">
         {
           principles.map(([title, description], index) => (
-            <article class="border-line bg-paper rounded-2xl border p-6">
-              <p class="text-signal font-mono text-[11px]">0{index + 1}</p>
-              <h2 class="font-display text-ink mt-7 text-2xl">{title}</h2>
-              <p class="text-ink-soft mt-3 text-sm leading-relaxed">{description}</p>
+            <article class="border-line border-t pt-5">
+              <p class="text-ink-soft font-mono text-[11px]">0{index + 1}</p>
+              <h2 class="font-display text-ink mt-5 text-xl">{title}</h2>
+              <p class="text-ink-soft mt-2 text-sm leading-relaxed">{description}</p>
             </article>
           ))
         }
@@ -87,26 +86,28 @@ const principles = [
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
     <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
       <div>
         <SectionHeading eyebrow="Education" />
         <p class="font-display text-ink text-xl">Ph.D. in Physics</p>
-        <p class="text-ink-soft mt-1 text-sm">
+        <p class="text-ink-soft mt-1 text-sm leading-relaxed">
           Quantum & Computational Physics · The University of Texas at Dallas · 2021
         </p>
         <p class="font-display text-ink mt-7 text-xl">B.E. in Computer Science</p>
-        <p class="text-ink-soft mt-1 text-sm">
+        <p class="text-ink-soft mt-1 text-sm leading-relaxed">
           Nanjing University of Aeronautics and Astronautics · 2016
         </p>
       </div>
       <div>
-        <SectionHeading eyebrow="Start a conversation" />
-        <p class="font-display text-ink max-w-xl text-2xl leading-snug">
-          Research collaborations, technical leadership, and deep-technology translation are all
-          good reasons to reach out.
+        <SectionHeading eyebrow="Connect" />
+        <p class="text-ink max-w-xl leading-8">
+          For research collaborations, technical leadership, and deep-technology translation.
         </p>
-        <Button href={`mailto:${SITE.email}`} class="mt-7">Email Ryan →</Button>
+        <a
+          href={`mailto:${SITE.email}`}
+          class="text-signal mt-5 inline-block font-mono text-xs hover:underline">{SITE.email} ↗</a
+        >
       </div>
     </div>
   </section>
