@@ -9,15 +9,21 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
-const { title, description = SITE.description, image = '/og-image.png' } = Astro.props;
+const {
+  title,
+  description = SITE.description,
+  image = '/og-image.png',
+  noindex = false,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={SITE.locale}>
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead title={title} description={description} image={image} noindex={noindex} />
   </head>
   <body id="top" class="bg-paper text-ink min-h-screen">
     <Header />

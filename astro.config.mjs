@@ -8,7 +8,14 @@ const SITE_URL = 'https://rhou.org';
 export default defineConfig({
   site: SITE_URL,
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => {
+        const pathname = new URL(page).pathname;
+        return pathname !== '/work/' && !pathname.startsWith('/work/') && pathname !== '/writing/';
+      },
+    }),
+  ],
 
   // Prefetches internal links on hover/viewport entry for near-instant navigation.
   prefetch: true,

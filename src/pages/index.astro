@@ -1,19 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import WorkRow from '@/components/WorkRow.astro';
 import PublicationRow from '@/components/PublicationRow.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import { SITE } from '@/site.config';
 
-const allWork = await getCollection('work', ({ data }) => !data.draft);
-const selectedWork = [...allWork]
-  .sort(
-    (a, b) =>
-      Number(b.data.featured) - Number(a.data.featured) ||
-      b.data.date.valueOf() - a.data.date.valueOf(),
-  )
-  .slice(0, 4);
 const publications = (await getCollection('publications'))
   .filter((entry) => entry.data.featured)
   .sort((a, b) => a.data.order - b.data.order)
@@ -36,10 +27,9 @@ const publications = (await getCollection('publications'))
         </p>
 
         <div class="mt-7 flex flex-wrap gap-2">
-          <a
-            href="/work"
-            class="border-line text-ink-soft hover:border-signal hover:text-ink rounded-full border px-3 py-1.5 font-mono text-[11px] transition-colors"
-            >AI Systems</a
+          <span
+            class="border-line text-ink-soft rounded-full border px-3 py-1.5 font-mono text-[11px]"
+            >AI Systems</span
           >
           <a
             href="/research"
@@ -57,7 +47,6 @@ const publications = (await getCollection('publications'))
           class="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs"
           aria-label="Profile links"
         >
-          <a href="/work" class="text-signal hover:underline">Selected work →</a>
           <a href="/research" class="text-signal hover:underline">Research →</a>
           <a href="/cv" class="text-signal hover:underline">CV →</a>
         </nav>
@@ -101,14 +90,6 @@ const publications = (await getCollection('publications'))
         </div>
       </aside>
     </div>
-  </section>
-
-  <section id="work" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-    <SectionHeading eyebrow="Selected work" count={allWork.length} />
-    <div>{selectedWork.map((entry) => <WorkRow entry={entry} />)}</div>
-    <a href="/work" class="text-signal mt-7 inline-block font-mono text-xs hover:underline"
-      >All work and case notes →</a
-    >
   </section>
 
   <section class="border-line border-y">

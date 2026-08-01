@@ -23,12 +23,12 @@ const { Content } = await render(entry);
 const formattedDate = formatDate(date);
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout title={title} description={summary} noindex>
   <article>
     <header class="border-line border-b">
       <div class="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-        <a href="/work" class="text-ink-soft hover:text-signal font-mono text-xs transition-colors">
-          ← All work
+        <a href="/" class="text-ink-soft hover:text-signal font-mono text-xs transition-colors">
+          ← Home
         </a>
 
         <p class="text-ink-soft mt-8 font-mono text-[11px] tracking-[0.18em] uppercase">
