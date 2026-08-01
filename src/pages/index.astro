@@ -7,8 +7,7 @@ import { SITE } from '@/site.config';
 
 const publications = (await getCollection('publications'))
   .filter((entry) => entry.data.featured)
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 4);
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title={SITE.name}>

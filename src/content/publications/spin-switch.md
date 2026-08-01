@@ -6,6 +6,6 @@ authorship: Co-author
 note: Editors' Highlight
 url: https://doi.org/10.1038/s41467-019-11210-z
 topics: [Quantum Technologies, Quantum Matter]
-featured: false
+featured: true
 order: 8
 ---
