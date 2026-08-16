@@ -1,6 +1,6 @@
 # rhou.org site context
 
-Last consolidated: 2026-08-01
+Last consolidated: 2026-08-15
 
 ## Purpose and positioning
 
@@ -75,6 +75,10 @@ Contact/profile links:
 
 The personal GitHub profile was intentionally replaced by LinkedIn in all
 public UI. Repository metadata still correctly points to GitHub.
+
+The homepage profile links now include `Research topics`, `Publications`, and
+`CV`, keeping the Research synthesis directly reachable without conflating it
+with the publication record.
 
 ## Information architecture
 
@@ -172,13 +176,13 @@ rather than claiming to enumerate every paper.
 ## Publication policy
 
 Homepage publications are controlled by `featured: true` and ordered by the
-`order` field. The homepage currently shows all seven featured publications in
+`order` field. The homepage currently shows all ten featured publications in
 two editorial groups derived from their topics:
 
-- `AI Systems` — retrieval, recommendation, and content distribution at
-  production scale;
-- `Quantum Technologies` — quantum dynamics, matter, and topological
-  photonics.
+- `AI Systems` — retrieval, recommendation, and distribution at web scale,
+  plus applied machine learning and AI for science;
+- `Quantum Technologies` — quantum dynamics and matter, physics-informed
+  computing, and optimization.
 
 The groups appear as two columns on desktop and stack on mobile. They use only
 the domain names as labels: there are no sequence numbers, counts,
@@ -290,6 +294,9 @@ will not satisfy the repository engine requirement.
 
 - Polish and eventually reintroduce Work/case studies.
 - Polish and eventually reintroduce Writing.
+- Replace the homepage's non-link `Quantum Technologies` `<a>` pill with a
+  semantic `<span>`; it is visually correct but currently creates an anchor
+  element without an `href`.
 - Unify favicon SVG, PNG, ICO, Apple, and manifest assets, then cache-bust their
   URLs. Current production/local differences are believed to be favicon caching
   plus inconsistent fallback designs; the issue is intentionally deferred.

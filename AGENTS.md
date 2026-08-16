@@ -48,8 +48,10 @@ user approval.
 - External profile links are Google Scholar and LinkedIn. Do not add a personal
   GitHub profile link unless requested.
 - The phrase `2nd Best Paper` for KDD 2026 is not public and must not appear in
-  the current source, generated site, metadata, or UI. The user chose not to
-  purge old Git history or old Actions records.
+  public page/content source under `src/`, the generated site, metadata, or UI.
+  Internal instructions and project logs may name it only to preserve this
+  embargo rule. The user chose not to purge old Git history or old Actions
+  records.
 - The KDD 2026 causal-retrieval paper may link to
   `https://arxiv.org/abs/2607.14161`.
 - Publication distinctions that are public include two `Editors' Suggestion`
