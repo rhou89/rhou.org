@@ -52,8 +52,8 @@ user approval.
   Internal instructions and project logs may name it only to preserve this
   embargo rule. The user chose not to purge old Git history or old Actions
   records.
-- The KDD 2026 causal-retrieval paper may link to
-  `https://arxiv.org/abs/2607.14161`.
+- The KDD 2026 causal-retrieval paper links to its ACM version of record at
+  `https://dl.acm.org/doi/10.1145/3770855.3818355`.
 - Publication distinctions that are public include two `Editors' Suggestion`
   entries and one `Editors' Highlight` entry. These are intentionally featured
   on the homepage.

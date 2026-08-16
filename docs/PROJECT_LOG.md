@@ -45,6 +45,8 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-01 | Added the public Research overview with four themed illustrations, restored Research navigation and homepage entry points, and expanded the curated publication collection. | GitHub Pages build and deploy jobs completed successfully.                                                                                                                                                                            | Deployed in `c9223f7`; Pages run `30724113571`.             |
 | 2026-08-01 | Refined featured-publication ordering and updated homepage and Publications copy.                                                                                           | GitHub Pages build and deploy jobs completed successfully for both follow-up pushes.                                                                                                                                                  | Deployed through `956c55c`; latest Pages run `30724933085`. |
 | 2026-08-15 | Rechecked the current `main` baseline and synchronized durable project documentation with the Research release and subsequent user changes.                                 | Diff and formatting checks; Astro diagnostics; production build with eight self-hosted font files; desktop/mobile light/dark layout, navigation, overflow, metadata, image-loading, hidden-route, sitemap, and Pages workflow checks. | Deployed in `91bd6b5`; Pages run `31971335535`.             |
+| 2026-08-16 | Replaced the KDD causal-retrieval preprint links with its ACM version of record and added the official ACM link for PinEqualizer.                                           | Formatting; Astro diagnostics; production build; source and rendered-link checks.                                                                                                                                                     | Local only.                                                 |
+| 2026-08-16 | Added the OptiDiff Optics Express paper to Publications and featured it on the homepage between causal retrieval and Pin-SCALE.                                             | Formatting; Astro diagnostics; production build; desktop/mobile layout, ordering, overflow, and rendered-link checks.                                                                                                                 | Local only.                                                 |
 
 ## Milestones
 
@@ -72,7 +74,7 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 
 ## Current test baseline
 
-At `956c55c`, the following were verified successfully on 2026-08-15:
+At the current local baseline, the following were verified through 2026-08-16:
 
 - Astro diagnostics: 29 files, 0 errors, 0 warnings, 0 hints.
 - Production static build: 13 generated pages and eight self-hosted font files.
@@ -88,17 +90,21 @@ At `956c55c`, the following were verified successfully on 2026-08-15:
   sitemap.
 - `/news/` shows thirteen chronological entries with working category filters,
   shareable query state, and stable anchors; the homepage shows the four newest.
-- Homepage shows all ten featured publications in AI Systems and Quantum
+- Homepage shows all eleven featured publications in AI Systems and Quantum
   Technologies groups, with one oral-presentation label and three editorial
   distinctions.
 - `2nd Best Paper` is absent from public page/content source and rendered
   pages; it appears only in internal instructions and project history that
   preserve the embargo rule.
-- KDD 2026 links to `https://arxiv.org/abs/2607.14161` on both the homepage and
-  Publications page, and the 2025 Physical Review E feature links to
+- KDD 2026 causal retrieval links to
+  `https://dl.acm.org/doi/10.1145/3770855.3818355` on both the homepage and
+  Publications page; PinEqualizer links to
+  `https://dl.acm.org/doi/10.1145/3770855.3818461`; and the 2025 Physical
+  Review E feature links to
   `https://doi.org/10.1103/9vbb-h73q`.
-- The latest verified Pages run is `30724933085`; both `build` and `deploy`
-  completed successfully for `956c55c`.
+- The latest verified Pages run is `31971335535`; both `build` and `deploy`
+  completed successfully for `91bd6b5`. The 2026-08-16 link updates remain
+  local only.
 
 ## Deployment behavior and logs
 

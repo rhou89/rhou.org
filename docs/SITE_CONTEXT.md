@@ -1,6 +1,6 @@
 # rhou.org site context
 
-Last consolidated: 2026-08-15
+Last consolidated: 2026-08-16
 
 ## Purpose and positioning
 
@@ -176,7 +176,7 @@ rather than claiming to enumerate every paper.
 ## Publication policy
 
 Homepage publications are controlled by `featured: true` and ordered by the
-`order` field. The homepage currently shows all ten featured publications in
+`order` field. The homepage currently shows all eleven featured publications in
 two editorial groups derived from their topics:
 
 - `AI Systems` — retrieval, recommendation, and distribution at web scale,
@@ -195,6 +195,12 @@ desktop viewport. Group names use bold monospaced headings and their short
 descriptions use smaller, muted body text, keeping the section hierarchy
 visually distinct from the Fraunces publication titles below.
 
+The 2026 Optics Express paper `OptiDiff: a spectrum-conditioned diffusion
+framework for inverse design of multilayer structures with asymmetric
+reflectance and non-intuitive field-distribution exploration` is featured in
+the AI Systems group between the KDD causal-retrieval paper and Pin-SCALE. It
+links to `https://doi.org/10.1364/OE.603418`.
+
 Public distinctions included on the homepage:
 
 - `Deep-learning causal retrieval optimization for efficient e-commerce
@@ -207,11 +213,16 @@ distribution in Pinterest` — Oral Presentation.
 
 KDD 2026 causal-retrieval publication:
 
-- arXiv link: `https://arxiv.org/abs/2607.14161`
+- ACM version-of-record link:
+  `https://dl.acm.org/doi/10.1145/3770855.3818355`
 - `2nd Best Paper` is embargoed/not public and must not appear in the current
   site or source.
 - Old public commit history and old Actions artifacts may contain the phrase.
   The user explicitly chose not to purge them.
+
+The KDD 2026 `PinEqualizer: Full Funnel Content Exploration and Debiasing
+System at Pinterest` publication links to its ACM version of record at
+`https://dl.acm.org/doi/10.1145/3770855.3818461`.
 
 The former 2023 `Topological Microlaser with a Non-Hermitian Topological Bulk`
 homepage entry was replaced by the 2025 Physical Review E paper `Direct

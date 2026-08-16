@@ -4,5 +4,5 @@ category: Recognition
 summary: “Deep-learning Causal Retrieval Optimization for Efficient e-commerce Distribution in Pinterest” was selected for an oral presentation at KDD 2026.
 links:
   - label: View paper
-    url: https://arxiv.org/abs/2607.14161
+    url: https://dl.acm.org/doi/10.1145/3770855.3818355
 ---
