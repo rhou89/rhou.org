@@ -25,9 +25,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `91bd6b5`
+- Current consolidated baseline: `769ee60`
 - Last verified Pages run:
-  `https://github.com/rhou89/rhou.org/actions/runs/31971335535`
+  `https://github.com/rhou89/rhou.org/actions/runs/31973201155`
 
 ## Ongoing task log
 
@@ -45,8 +45,8 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-01 | Added the public Research overview with four themed illustrations, restored Research navigation and homepage entry points, and expanded the curated publication collection. | GitHub Pages build and deploy jobs completed successfully.                                                                                                                                                                            | Deployed in `c9223f7`; Pages run `30724113571`.             |
 | 2026-08-01 | Refined featured-publication ordering and updated homepage and Publications copy.                                                                                           | GitHub Pages build and deploy jobs completed successfully for both follow-up pushes.                                                                                                                                                  | Deployed through `956c55c`; latest Pages run `30724933085`. |
 | 2026-08-15 | Rechecked the current `main` baseline and synchronized durable project documentation with the Research release and subsequent user changes.                                 | Diff and formatting checks; Astro diagnostics; production build with eight self-hosted font files; desktop/mobile light/dark layout, navigation, overflow, metadata, image-loading, hidden-route, sitemap, and Pages workflow checks. | Deployed in `91bd6b5`; Pages run `31971335535`.             |
-| 2026-08-16 | Replaced the KDD causal-retrieval preprint links with its ACM version of record and added the official ACM link for PinEqualizer.                                           | Formatting; Astro diagnostics; production build; source and rendered-link checks.                                                                                                                                                     | Local only.                                                 |
-| 2026-08-16 | Added the OptiDiff Optics Express paper to Publications and featured it on the homepage between causal retrieval and Pin-SCALE.                                             | Formatting; Astro diagnostics; production build; desktop/mobile layout, ordering, overflow, and rendered-link checks.                                                                                                                 | Local only.                                                 |
+| 2026-08-16 | Replaced the KDD causal-retrieval preprint links with its ACM version of record and added the official ACM link for PinEqualizer.                                           | Formatting; Astro diagnostics; production build; source, rendered-link, and production-link checks.                                                                                                                                   | Deployed in `769ee60`; Pages run `31973201155`.             |
+| 2026-08-16 | Added the OptiDiff Optics Express paper to Publications and featured it on the homepage between causal retrieval and Pin-SCALE.                                             | Formatting; Astro diagnostics; production build; desktop/mobile layout, ordering, overflow, rendered-link, and production-link checks.                                                                                                | Deployed in `769ee60`; Pages run `31973201155`.             |
 
 ## Milestones
 
@@ -71,10 +71,11 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `fa6cbbb` | Launched the News timeline and homepage summary, then refreshed featured publication details.                          |
 | `c9223f7` | Launched the four-area Research overview, restored its public navigation, and expanded the curated publication record. |
 | `956c55c` | Completed the Research follow-up ordering and homepage/Publications copy refinements.                                  |
+| `769ee60` | Published the official ACM links for two KDD papers and added OptiDiff to Publications and the homepage.               |
 
 ## Current test baseline
 
-At the current local baseline, the following were verified through 2026-08-16:
+At `769ee60`, the following were verified successfully on 2026-08-16:
 
 - Astro diagnostics: 29 files, 0 errors, 0 warnings, 0 hints.
 - Production static build: 13 generated pages and eight self-hosted font files.
@@ -102,9 +103,9 @@ At the current local baseline, the following were verified through 2026-08-16:
   `https://dl.acm.org/doi/10.1145/3770855.3818461`; and the 2025 Physical
   Review E feature links to
   `https://doi.org/10.1103/9vbb-h73q`.
-- The latest verified Pages run is `31971335535`; both `build` and `deploy`
-  completed successfully for `91bd6b5`. The 2026-08-16 link updates remain
-  local only.
+- The latest verified Pages run is `31973201155`; both `build` and `deploy`
+  completed successfully for `769ee60`, and the updated links were verified on
+  `https://rhou.org`.
 
 ## Deployment behavior and logs
 
