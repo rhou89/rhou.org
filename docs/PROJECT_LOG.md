@@ -25,9 +25,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `769ee60`
+- Current consolidated baseline: `f1f066d`
 - Last verified Pages run:
-  `https://github.com/rhou89/rhou.org/actions/runs/31973201155`
+  `https://github.com/rhou89/rhou.org/actions/runs/33045603832`
 
 ## Ongoing task log
 
@@ -47,8 +47,8 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-15 | Rechecked the current `main` baseline and synchronized durable project documentation with the Research release and subsequent user changes.                                 | Diff and formatting checks; Astro diagnostics; production build with eight self-hosted font files; desktop/mobile light/dark layout, navigation, overflow, metadata, image-loading, hidden-route, sitemap, and Pages workflow checks. | Deployed in `91bd6b5`; Pages run `31971335535`.             |
 | 2026-08-16 | Replaced the KDD causal-retrieval preprint links with its ACM version of record and added the official ACM link for PinEqualizer.                                           | Formatting; Astro diagnostics; production build; source, rendered-link, and production-link checks.                                                                                                                                   | Deployed in `769ee60`; Pages run `31973201155`.             |
 | 2026-08-16 | Added the OptiDiff Optics Express paper to Publications and featured it on the homepage between causal retrieval and Pin-SCALE.                                             | Formatting; Astro diagnostics; production build; desktop/mobile layout, ordering, overflow, rendered-link, and production-link checks.                                                                                                | Deployed in `769ee60`; Pages run `31973201155`.             |
-| 2026-08-26 | Added the public KDD 2026 Best Paper Runner-Up distinction for the causal-retrieval paper and a sourced News update with three announcement links.                          | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, News copy, stable anchor, and external-link checks.                                                               | Local only.                                                 |
-| 2026-08-26 | Simplified the causal-retrieval publication distinction to the official `Best Paper Runner-Up` wording and prepared the complete award update for release.                  | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, and News wording checks.                                                                                          | Local only.                                                 |
+| 2026-08-26 | Added the public KDD 2026 Best Paper Runner-Up distinction for the causal-retrieval paper and a sourced News update with three announcement links.                          | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, News copy, stable anchor, and external-link checks.                                                               | Deployed in `f1f066d`; Pages run `33045603832`.             |
+| 2026-08-26 | Simplified the causal-retrieval publication distinction to the official `Best Paper Runner-Up` wording and released the complete award update.                              | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, and News wording checks; GitHub Pages build and deploy jobs succeeded.                                            | Deployed in `f1f066d`; Pages run `33045603832`.             |
 
 ## Milestones
 
@@ -74,10 +74,11 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `c9223f7` | Launched the four-area Research overview, restored its public navigation, and expanded the curated publication record. |
 | `956c55c` | Completed the Research follow-up ordering and homepage/Publications copy refinements.                                  |
 | `769ee60` | Published the official ACM links for two KDD papers and added OptiDiff to Publications and the homepage.               |
+| `f1f066d` | Published the KDD 2026 Best Paper Runner-Up distinction and its sourced News announcement.                             |
 
 ## Current test baseline
 
-At `769ee60`, the following were verified successfully on 2026-08-16:
+At `f1f066d`, the following were verified successfully on 2026-08-26:
 
 - Astro diagnostics: 29 files, 0 errors, 0 warnings, 0 hints.
 - Production static build: 13 generated pages and eight self-hosted font files.
@@ -91,22 +92,21 @@ At `769ee60`, the following were verified successfully on 2026-08-16:
   illustrations load successfully in responsive light and dark layouts.
 - Hidden Work/Writing routes have `noindex, nofollow` and are absent from the
   sitemap.
-- `/news/` shows thirteen chronological entries with working category filters,
+- `/news/` shows fourteen chronological entries with working category filters,
   shareable query state, and stable anchors; the homepage shows the four newest.
 - Homepage shows all eleven featured publications in AI Systems and Quantum
-  Technologies groups, with one oral-presentation label and three editorial
+  Technologies groups, with one Best Paper Runner-Up label and three editorial
   distinctions.
-- `2nd Best Paper` is absent from public page/content source and rendered
-  pages; it appears only in internal instructions and project history that
-  preserve the embargo rule.
+- The KDD causal-retrieval award News entry includes the official public
+  distinction and links to Pinterest Engineering, Xianxing Zhang, and Sai Xiao.
 - KDD 2026 causal retrieval links to
   `https://dl.acm.org/doi/10.1145/3770855.3818355` on both the homepage and
   Publications page; PinEqualizer links to
   `https://dl.acm.org/doi/10.1145/3770855.3818461`; and the 2025 Physical
   Review E feature links to
   `https://doi.org/10.1103/9vbb-h73q`.
-- The latest verified Pages run is `31973201155`; both `build` and `deploy`
-  completed successfully for `769ee60`, and the updated links were verified on
+- The latest verified Pages run is `33045603832`; both `build` and `deploy`
+  completed successfully for `f1f066d`, and the updated content was verified on
   `https://rhou.org`.
 
 ## Deployment behavior and logs
