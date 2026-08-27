@@ -47,6 +47,8 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-15 | Rechecked the current `main` baseline and synchronized durable project documentation with the Research release and subsequent user changes.                                 | Diff and formatting checks; Astro diagnostics; production build with eight self-hosted font files; desktop/mobile light/dark layout, navigation, overflow, metadata, image-loading, hidden-route, sitemap, and Pages workflow checks. | Deployed in `91bd6b5`; Pages run `31971335535`.             |
 | 2026-08-16 | Replaced the KDD causal-retrieval preprint links with its ACM version of record and added the official ACM link for PinEqualizer.                                           | Formatting; Astro diagnostics; production build; source, rendered-link, and production-link checks.                                                                                                                                   | Deployed in `769ee60`; Pages run `31973201155`.             |
 | 2026-08-16 | Added the OptiDiff Optics Express paper to Publications and featured it on the homepage between causal retrieval and Pin-SCALE.                                             | Formatting; Astro diagnostics; production build; desktop/mobile layout, ordering, overflow, rendered-link, and production-link checks.                                                                                                | Deployed in `769ee60`; Pages run `31973201155`.             |
+| 2026-08-26 | Added the public KDD 2026 Best Paper Runner-Up distinction for the causal-retrieval paper and a sourced News update with three announcement links.                          | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, News copy, stable anchor, and external-link checks.                                                               | Local only.                                                 |
+| 2026-08-26 | Simplified the causal-retrieval publication distinction to the official `Best Paper Runner-Up` wording and prepared the complete award update for release.                  | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, and News wording checks.                                                                                          | Local only.                                                 |
 
 ## Milestones
 
@@ -154,9 +156,9 @@ different icon candidates. The user chose to defer the issue and discarded an
 experimental replacement icon set. Future work should unify all formats first,
 then change filenames or add a version query to every icon and manifest URL.
 
-### Embargoed KDD distinction in old history
+### Resolved KDD distinction embargo
 
-The current source and live site do not contain `2nd Best Paper`. The original
-public launch commit and old Pages/Actions history may still contain it. The
-user explicitly accepted that residual history and chose not to rewrite Git
-history or delete old Actions runs.
+The KDD 2026 causal-retrieval distinction was publicly announced in August
+2026 as `Best Paper Runner-Up` in the Applied Data Science Track. Current public
+copy uses that wording. The former internal wording `2nd Best Paper` remains
+superseded; old commit and Actions history were not rewritten.

@@ -132,8 +132,8 @@ entry's stable anchor on `/news/`; filters and external source links remain on
 the full News page. Do not create individual news-detail routes, category
 colors, social-sharing controls, or promotional cards without a clear need.
 
-The record currently contains thirteen updates from 2018–2026: two invited
-talks, six recognitions, three media-coverage entries, and two experimental
+The record currently contains fourteen updates from 2018–2026: two invited
+talks, seven recognitions, three media-coverage entries, and two experimental
 realizations of previously proposed momentum-space Josephson dynamics. The
 WashU Physics Theory Seminar shown as `29 February` in the source screenshot is
 recorded as February 29, 2024; 2023 was not a leap year.
@@ -204,7 +204,7 @@ links to `https://doi.org/10.1364/OE.603418`.
 Public distinctions included on the homepage:
 
 - `Deep-learning causal retrieval optimization for efficient e-commerce
-distribution in Pinterest` — Oral Presentation.
+distribution in Pinterest` — Best Paper Runner-Up.
 - `Nonlinear dynamics in a synthetic momentum state lattice` — Editors'
   Suggestion.
 - `Momentum Space Josephson Effects` — Editors' Suggestion.
@@ -215,10 +215,11 @@ KDD 2026 causal-retrieval publication:
 
 - ACM version-of-record link:
   `https://dl.acm.org/doi/10.1145/3770855.3818355`
-- `2nd Best Paper` is embargoed/not public and must not appear in the current
-  site or source.
-- Old public commit history and old Actions artifacts may contain the phrase.
-  The user explicitly chose not to purge them.
+- The public distinction is `Best Paper Runner-Up` in the Applied Data Science
+  Track. The former internal wording `2nd Best Paper` is superseded and should
+  not be used in public copy.
+- The News record includes the award announcement with links to Pinterest
+  Engineering, Xianxing Zhang, and Sai Xiao.
 
 The KDD 2026 `PinEqualizer: Full Funnel Content Exploration and Debiasing
 System at Pinterest` publication links to its ACM version of record at

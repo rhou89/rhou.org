@@ -47,16 +47,15 @@ user approval.
 - Role: `Technology Leader & Interdisciplinary Researcher`.
 - External profile links are Google Scholar and LinkedIn. Do not add a personal
   GitHub profile link unless requested.
-- The phrase `2nd Best Paper` for KDD 2026 is not public and must not appear in
-  public page/content source under `src/`, the generated site, metadata, or UI.
-  Internal instructions and project logs may name it only to preserve this
-  embargo rule. The user chose not to purge old Git history or old Actions
-  records.
+- The KDD 2026 causal-retrieval paper's `Best Paper Runner-Up` distinction in
+  the Applied Data Science Track is public and may be featured in the site.
+- Use the official public wording `Best Paper Runner-Up`; do not revive the
+  superseded internal wording `2nd Best Paper` in public copy.
 - The KDD 2026 causal-retrieval paper links to its ACM version of record at
   `https://dl.acm.org/doi/10.1145/3770855.3818355`.
-- Publication distinctions that are public include two `Editors' Suggestion`
-  entries and one `Editors' Highlight` entry. These are intentionally featured
-  on the homepage.
+- Publication distinctions that are public include one `Best Paper Runner-Up`,
+  two `Editors' Suggestion`, and one `Editors' Highlight` entry. These are
+  intentionally featured on the homepage.
 
 Before publishing content changes, search the entire current source for stale,
 embargoed, or superseded wording. Do not assume that hiding a navigation link
