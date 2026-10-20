@@ -25,9 +25,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `f1f066d`
+- Current consolidated baseline: `bce5ea1`
 - Last verified Pages run:
-  `https://github.com/rhou89/rhou.org/actions/runs/33045603832`
+  `https://github.com/rhou89/rhou.org/actions/runs/39500245030`
 
 ## Ongoing task log
 
@@ -49,7 +49,7 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-16 | Added the OptiDiff Optics Express paper to Publications and featured it on the homepage between causal retrieval and Pin-SCALE.                                             | Formatting; Astro diagnostics; production build; desktop/mobile layout, ordering, overflow, rendered-link, and production-link checks.                                                                                                | Deployed in `769ee60`; Pages run `31973201155`.             |
 | 2026-08-26 | Added the public KDD 2026 Best Paper Runner-Up distinction for the causal-retrieval paper and a sourced News update with three announcement links.                          | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, News copy, stable anchor, and external-link checks.                                                               | Deployed in `f1f066d`; Pages run `33045603832`.             |
 | 2026-08-26 | Simplified the causal-retrieval publication distinction to the official `Best Paper Runner-Up` wording and released the complete award update.                              | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, and News wording checks; GitHub Pages build and deploy jobs succeeded.                                            | Deployed in `f1f066d`; Pages run `33045603832`.             |
-| 2026-10-20 | Added the official KDD 2026 Awards link to the award announcement and changed the homepage heading to `Ryan (Junpeng) Hou`.                                                 | Formatting; Astro diagnostics; production build with eight fonts; desktop/mobile light/dark Home and News, zero overflow, exact hrefs, titles, canonicals, and robots.                                                                | Local only.                                                 |
+| 2026-10-20 | Added the official KDD 2026 Awards link to the award announcement and changed the homepage heading to `Ryan (Junpeng) Hou`.                                                 | Formatting; Astro diagnostics; production build with eight fonts; desktop/mobile light/dark Home and News, zero overflow, exact hrefs, titles, canonicals, and robots.                                                                | Deployed in `bce5ea1`; Pages run `39500245030`.             |
 
 ## Milestones
 
@@ -76,8 +76,23 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `956c55c` | Completed the Research follow-up ordering and homepage/Publications copy refinements.                                  |
 | `769ee60` | Published the official ACM links for two KDD papers and added OptiDiff to Publications and the homepage.               |
 | `f1f066d` | Published the KDD 2026 Best Paper Runner-Up distinction and its sourced News announcement.                             |
+| `bce5ea1` | Updated the homepage display name and added the official KDD 2026 awards source.                                       |
 
 ## Current test baseline
+
+The `bce5ea1` content update was verified on 2026-10-20:
+
+- Formatting passed; Astro diagnostics reported 29 files with zero errors,
+  warnings, or hints; the production build generated 13 pages and eight fonts.
+- Home and News were visually checked at 1365x768 and 390x844 in light and
+  dark themes, with zero horizontal overflow. Exact source-link targets,
+  page titles, canonical URLs, and robots metadata were checked.
+- The live homepage displays `Ryan (Junpeng) Hou`; the award News entry links
+  first to `https://kdd2026.kdd.org/awards/` and retains its three LinkedIn
+  announcement links.
+- Both build and deploy succeeded in Pages run `39500245030`.
+
+### Earlier full-site baseline
 
 At `f1f066d`, the following were verified successfully on 2026-08-26:
 
@@ -106,7 +121,7 @@ At `f1f066d`, the following were verified successfully on 2026-08-26:
   `https://dl.acm.org/doi/10.1145/3770855.3818461`; and the 2025 Physical
   Review E feature links to
   `https://doi.org/10.1103/9vbb-h73q`.
-- The latest verified Pages run is `33045603832`; both `build` and `deploy`
+- That release's verified Pages run was `33045603832`; both `build` and `deploy`
   completed successfully for `f1f066d`, and the updated content was verified on
   `https://rhou.org`.
 
