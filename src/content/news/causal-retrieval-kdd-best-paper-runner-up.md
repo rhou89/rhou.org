@@ -3,6 +3,8 @@ date: 2026-08-18
 category: Recognition
 summary: '“Deep-learning Causal Retrieval Optimization for Efficient e-commerce Distribution in Pinterest” received the Best Paper Runner-Up Award in the Applied Data Science Track at KDD 2026.'
 links:
+  - label: KDD 2026 Awards
+    url: https://kdd2026.kdd.org/awards/
   - label: Pinterest Engineering
     url: https://www.linkedin.com/posts/pinterest-engineering_kdd2026-ugcPost-7495573399411396609-rlc9?utm_source=share&utm_medium=member_desktop&rcm=ACoAACIJYjcBYpHhh_ffkqE9mZ8m6XicFD390k8
   - label: Xianxing Zhang

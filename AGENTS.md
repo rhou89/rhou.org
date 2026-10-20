@@ -41,7 +41,7 @@ user approval.
 
 ## Content and confidentiality rules
 
-- Homepage visual name: `Ryan Hou`.
+- Homepage visual name: `Ryan (Junpeng) Hou`.
 - Site/SEO name: `Ryan (Junpeng) Hou`.
 - CV heading: `Ryan Hou, Ph.D.`.
 - Role: `Technology Leader & Interdisciplinary Researcher`.

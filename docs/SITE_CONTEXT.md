@@ -1,6 +1,6 @@
 # rhou.org site context
 
-Last consolidated: 2026-08-16
+Last consolidated: 2026-10-20
 
 ## Purpose and positioning
 
@@ -27,7 +27,7 @@ background, and contact site.
 
 Identity:
 
-- Visual homepage name: **Ryan Hou**
+- Visual homepage name: **Ryan (Junpeng) Hou**
 - SEO/site name: **Ryan (Junpeng) Hou**
 - CV name: **Ryan Hou, Ph.D.**
 - Role: **Technology Leader & Interdisciplinary Researcher**
@@ -218,7 +218,8 @@ KDD 2026 causal-retrieval publication:
 - The public distinction is `Best Paper Runner-Up` in the Applied Data Science
   Track. The former internal wording `2nd Best Paper` is superseded and should
   not be used in public copy.
-- The News record includes the award announcement with links to Pinterest
+- The News record includes the award announcement with the official
+  `https://kdd2026.kdd.org/awards/` link first, followed by Pinterest
   Engineering, Xianxing Zhang, and Sai Xiao.
 
 The KDD 2026 `PinEqualizer: Full Funnel Content Exploration and Debiasing
