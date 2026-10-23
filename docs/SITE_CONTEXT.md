@@ -1,6 +1,6 @@
 # rhou.org site context
 
-Last consolidated: 2026-10-22
+Last consolidated: 2026-10-23
 
 ## Purpose and positioning
 

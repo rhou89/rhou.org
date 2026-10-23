@@ -25,9 +25,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `bce5ea1`
+- Current consolidated baseline: `3961f4a`
 - Last verified Pages run:
-  `https://github.com/rhou89/rhou.org/actions/runs/39500245030`
+  `https://github.com/rhou89/rhou.org/actions/runs/40002628017`
 
 ## Ongoing task log
 
@@ -50,8 +50,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-08-26 | Added the public KDD 2026 Best Paper Runner-Up distinction for the causal-retrieval paper and a sourced News update with three announcement links.                          | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, News copy, stable anchor, and external-link checks.                                                               | Deployed in `f1f066d`; Pages run `33045603832`.             |
 | 2026-08-26 | Simplified the causal-retrieval publication distinction to the official `Best Paper Runner-Up` wording and released the complete award update.                              | Formatting; Astro diagnostics; production build with eight self-hosted font files; rendered homepage, Publications, and News wording checks; GitHub Pages build and deploy jobs succeeded.                                            | Deployed in `f1f066d`; Pages run `33045603832`.             |
 | 2026-10-20 | Added the official KDD 2026 Awards link to the award announcement and changed the homepage heading to `Ryan (Junpeng) Hou`.                                                 | Formatting; Astro diagnostics; production build with eight fonts; desktop/mobile light/dark Home and News, zero overflow, exact hrefs, titles, canonicals, and robots.                                                                | Deployed in `bce5ea1`; Pages run `39500245030`.             |
-| 2026-10-22 | Added one Pin-SCALE Media update with the supplied WeChat article and English GitHub explainer links; the homepage includes it automatically.                               | Formatting; Astro diagnostics; 13-page build (Google Fonts unavailable); generated copy, dates, anchors, exact hrefs, metadata, and hidden-route checks. Full-font build and browser QA blocked by local-listener permissions.        | local only                                                  |
+| 2026-10-22 | Added one Pin-SCALE Media update with the supplied WeChat article and English GitHub explainer links; the homepage includes it automatically.                               | Formatting; Astro diagnostics; 13-page build (Google Fonts unavailable); generated copy, dates, anchors, exact hrefs, metadata, and hidden-route checks. Full-font build and browser QA blocked by local-listener permissions.        | Deployed in `3961f4a`; Pages run `40002628017`.             |
 | 2026-10-23 | Prepared the isolated Pin-SCALE preview checkout with cached fonts and a manual startup command.                                                                            | Astro dev exited before readiness; an explicit localhost static-server attempt failed with a port-binding permission error. Browser file previews are also blocked; no running preview was verified.                                  | local only                                                  |
+| 2026-10-23 | Published the Pin-SCALE Media entry and verified the live News timeline and homepage summary.                                                                               | Formatting; CI Astro diagnostics and 13-page build with eight fonts; Pages build/deploy success; live content, hrefs, anchors, metadata, Media filter, News light/dark views, and desktop/mobile overflow checks.                     | Deployed in `3961f4a`; Pages run `40002628017`.             |
 
 ## Milestones
 
@@ -79,20 +80,22 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `769ee60` | Published the official ACM links for two KDD papers and added OptiDiff to Publications and the homepage.               |
 | `f1f066d` | Published the KDD 2026 Best Paper Runner-Up distinction and its sourced News announcement.                             |
 | `bce5ea1` | Updated the homepage display name and added the official KDD 2026 awards source.                                       |
+| `3961f4a` | Published third-party Pin-SCALE coverage with Chinese WeChat and English GitHub source links.                          |
 
 ## Current test baseline
 
-The `bce5ea1` content update was verified on 2026-10-20:
+The `3961f4a` content update was verified on 2026-10-23:
 
-- Formatting passed; Astro diagnostics reported 29 files with zero errors,
+- Formatting passed; CI Astro diagnostics reported 29 files with zero errors,
   warnings, or hints; the production build generated 13 pages and eight fonts.
-- Home and News were visually checked at 1365x768 and 390x844 in light and
-  dark themes, with zero horizontal overflow. Exact source-link targets,
-  page titles, canonical URLs, and robots metadata were checked.
-- The live homepage displays `Ryan (Junpeng) Hou`; the award News entry links
-  first to `https://kdd2026.kdd.org/awards/` and retains its three LinkedIn
-  announcement links.
-- Both build and deploy succeeded in Pages run `39500245030`.
+- Live News was visually checked at 1365x768 and 390x844 in light and dark
+  themes. Home and News had zero horizontal overflow at both widths. Exact
+  source-link targets, page titles, canonical URLs, and robots metadata were
+  checked.
+- News contains fifteen entries, including the new Pin-SCALE Media update and
+  its supplied WeChat and GitHub source links. The Media filter shows four
+  entries. The homepage includes the new summary and its stable News anchor.
+- Both build and deploy succeeded in Pages run `40002628017`.
 
 ### Earlier full-site baseline
 
