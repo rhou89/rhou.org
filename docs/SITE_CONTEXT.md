@@ -125,12 +125,26 @@ Filtering happens in place with accessible buttons and a shareable `type` query
 parameter. Every entry also receives a stable anchor derived from its content
 filename. With JavaScript unavailable, the complete chronology remains visible.
 
-The homepage shows the four most recent entries automatically, immediately
+The homepage shows the four most recent entries automatically below Highlights, immediately
 after Publications and before the closing positioning/contact section. These
 compact rows include only the date, summary, and category, and link to the
 entry's stable anchor on `/news/`; filters and external source links remain on
 the full News page. Do not create individual news-detail routes, category
 colors, social-sharing controls, or promotional cards without a clear need.
+
+Home and News share a compact Highlights strip, rendered by
+`src/components/NewsHighlights.astro`. Optional `highlight` metadata on a News
+entry supplies its venue/year label, distinction, short topic, and independent
+display order. The strip uses three editorial columns on desktop and compact
+rows on mobile. Additional selections wrap into another row; an empty selection
+does not render the strip. Highlighting an entry does not change its date,
+timeline position, or inclusion among the four newest homepage updates.
+
+The initial selection contains KDD 2026 Best Paper Runner-Up, PRL 2021 Editors’
+Suggestion, and PRL 2018 Editors’ Suggestion. The KDD short topic is
+`Causal retrieval policy optimization at scale`. Each highlight links to the
+original News anchor. On News, selecting a highlight clears an active category
+filter so the destination remains visible.
 
 The record currently contains fifteen updates from 2018–2026: two invited
 talks, seven recognitions, four media-coverage entries, and two experimental

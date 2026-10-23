@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import NewsHighlights from '@/components/NewsHighlights.astro';
 import NewsRow from '@/components/NewsRow.astro';
 import PageIntro from '@/components/PageIntro.astro';
 
@@ -37,6 +38,8 @@ for (const entry of news) {
     aria-labelledby="news-filter-label"
     data-news-timeline
   >
+    <NewsHighlights entries={news} />
+
     <div class="border-line border-b pb-8">
       <p
         id="news-filter-label"
@@ -133,6 +136,14 @@ for (const entry of news) {
 
     buttons.forEach((button) => {
       button.addEventListener('click', () => applyFilter(button.dataset.newsFilter ?? 'all'));
+    });
+
+    timeline.querySelectorAll<HTMLAnchorElement>('[data-news-highlight]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+          return;
+        applyFilter('all');
+      });
     });
   }
 

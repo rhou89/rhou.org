@@ -57,6 +57,14 @@ const news = defineCollection({
     date: z.coerce.date(),
     category: z.enum(['Recognition', 'Talks', 'Media', 'Adoption']),
     summary: z.string().max(500),
+    highlight: z
+      .object({
+        venue: z.string().min(1),
+        distinction: z.string().min(1),
+        topic: z.string().min(1),
+        order: z.number().int().nonnegative().default(100),
+      })
+      .optional(),
     links: z
       .array(
         z.object({

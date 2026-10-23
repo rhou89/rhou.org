@@ -1,6 +1,11 @@
 ---
 date: 2021-09-22
 category: Recognition
+highlight:
+  venue: PRL 2021
+  distinction: Editors’ Suggestion
+  topic: Synthetic momentum-state lattice
+  order: 2
 summary: “Nonlinear Dynamics in a Synthetic Momentum-State Lattice” was selected as an Editors’ Suggestion by Physical Review Letters.
 links:
   - label: View paper

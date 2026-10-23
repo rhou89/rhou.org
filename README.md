@@ -55,6 +55,21 @@ released until both its build and deploy jobs succeed.
 - `src/content/writing/` — retained external essays, hidden at launch
 - `src/site.config.ts` — identity, positioning, links, and navigation
 
+To select an existing News entry for the shared homepage and News Highlights
+strip, add optional frontmatter:
+
+```yaml
+highlight:
+  venue: KDD 2026
+  distinction: Best Paper Runner-Up
+  topic: Causal retrieval policy optimization at scale
+  order: 1
+```
+
+Lower `highlight.order` values appear first in the strip. The entry's original
+date still determines its position in the timeline and latest homepage updates.
+The layout is shared through `src/components/NewsHighlights.astro`.
+
 ## Project documentation
 
 - `AGENTS.md` — repository-wide instructions for future Codex tasks

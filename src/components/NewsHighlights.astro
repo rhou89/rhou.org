@@ -1,0 +1,168 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entries: CollectionEntry<'news'>[];
+  headingLevel?: 'h2' | 'h3';
+  id?: string;
+}
+
+const { entries, headingLevel: Heading = 'h2', id = 'news-highlights' } = Astro.props;
+const highlights = entries
+  .flatMap(({ id, data }) => (data.highlight ? [{ id, date: data.date, ...data.highlight }] : []))
+  .sort((a, b) => a.order - b.order || b.date.getTime() - a.date.getTime());
+---
+
+{
+  highlights.length > 0 && (
+    <section id={id} class="mb-10" aria-labelledby={`${id}-label`} data-news-highlights>
+      <Heading
+        id={`${id}-label`}
+        class="text-ink-soft mb-4 font-mono text-[11px] tracking-[0.18em] uppercase"
+      >
+        Highlights
+      </Heading>
+      <ul class="highlight-list">
+        {highlights.map((highlight) => (
+          <li>
+            <a
+              href={`/news/#${highlight.id}`}
+              class="highlight-link"
+              data-news-highlight
+              aria-label={`${highlight.venue}, ${highlight.distinction}. ${highlight.topic}. View original news.`}
+            >
+              <span class="highlight-venue">{highlight.venue}</span>
+              <span class="highlight-arrow" aria-hidden="true">
+                ↗
+              </span>
+              <span class="highlight-distinction">{highlight.distinction}</span>
+              <span class="highlight-topic">{highlight.topic}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .highlight-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 1.5rem;
+    margin: 0;
+    padding: 1.25rem 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .highlight-list > li {
+    min-width: 0;
+  }
+
+  .highlight-list > li:not(:nth-child(3n + 1)) {
+    border-left: 1px solid var(--line);
+  }
+
+  .highlight-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 0.75rem;
+    gap: 0 0.625rem;
+    align-content: start;
+    height: 100%;
+    padding: 0 1.5rem;
+    text-decoration: none;
+  }
+
+  .highlight-list > li:nth-child(3n + 1) .highlight-link {
+    padding-left: 0;
+  }
+
+  .highlight-list > li:nth-child(3n) .highlight-link {
+    padding-right: 0;
+  }
+
+  .highlight-venue {
+    grid-column: 1;
+    margin-bottom: 0.4375rem;
+    color: var(--ink-soft);
+    font: 400 11px/1.5 var(--font-mono);
+  }
+
+  .highlight-distinction {
+    grid-column: 1 / -1;
+    color: var(--ink);
+    font: 400 20px/1.35 var(--font-display);
+  }
+
+  .highlight-topic {
+    grid-column: 1 / -1;
+    margin-top: 0.4375rem;
+    color: var(--ink-soft);
+    font: 400 12px/1.6 var(--font-body);
+    overflow-wrap: anywhere;
+  }
+
+  .highlight-arrow {
+    grid-column: 2;
+    grid-row: 1;
+    color: var(--signal);
+    font: 400 12px/1.4 var(--font-mono);
+  }
+
+  .highlight-link:hover .highlight-distinction {
+    color: var(--signal);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .highlight-distinction {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .highlight-list {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 0;
+      padding: 0;
+    }
+
+    .highlight-list > li:not(:nth-child(3n + 1)) {
+      border-left: 0;
+    }
+
+    .highlight-list > li + li {
+      border-top: 1px solid var(--line);
+    }
+
+    .highlight-list > li .highlight-link {
+      grid-template-columns: 77px minmax(0, 1fr) 12px;
+      gap: 4px 12px;
+      align-items: baseline;
+      padding: 15px 0;
+    }
+
+    .highlight-venue {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    .highlight-distinction {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 18px;
+    }
+
+    .highlight-arrow {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .highlight-topic {
+      grid-column: 2 / -1;
+      margin: 0;
+    }
+  }
+</style>

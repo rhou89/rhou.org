@@ -1,6 +1,11 @@
 ---
 date: 2026-08-18
 category: Recognition
+highlight:
+  venue: KDD 2026
+  distinction: Best Paper Runner-Up
+  topic: Causal retrieval policy optimization at scale
+  order: 1
 summary: '“Deep-learning Causal Retrieval Optimization for Efficient e-commerce Distribution in Pinterest” received the Best Paper Runner-Up Award in the Applied Data Science Track at KDD 2026.'
 links:
   - label: KDD 2026 Awards
