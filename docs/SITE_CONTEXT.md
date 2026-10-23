@@ -1,6 +1,6 @@
 # rhou.org site context
 
-Last consolidated: 2026-10-20
+Last consolidated: 2026-10-22
 
 ## Purpose and positioning
 
@@ -132,11 +132,16 @@ entry's stable anchor on `/news/`; filters and external source links remain on
 the full News page. Do not create individual news-detail routes, category
 colors, social-sharing controls, or promotional cards without a clear need.
 
-The record currently contains fourteen updates from 2018–2026: two invited
-talks, seven recognitions, three media-coverage entries, and two experimental
+The record currently contains fifteen updates from 2018–2026: two invited
+talks, seven recognitions, four media-coverage entries, and two experimental
 realizations of previously proposed momentum-space Josephson dynamics. The
 WashU Physics Theory Seminar shown as `29 February` in the source screenshot is
 recorded as February 29, 2024; 2023 was not a leap year.
+
+The latest Media entry records third-party Pin-SCALE coverage on WeChat and in
+the `lmxhappy/step-by-step-learning-ai` repository, with Chinese and English
+source links. It is dated October 22, 2026, as the site update date, rather than
+an independently verified publication date for the WeChat article.
 
 ## Research-page policy
 
