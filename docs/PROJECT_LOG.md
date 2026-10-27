@@ -25,9 +25,9 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 - Production: `https://rhou.org`
 - Repository: `https://github.com/rhou89/rhou.org`
 - Production branch: `main`
-- Current consolidated baseline: `3961f4a`
+- Current consolidated baseline: `d46c782`
 - Last verified Pages run:
-  `https://github.com/rhou89/rhou.org/actions/runs/40002628017`
+  `https://github.com/rhou89/rhou.org/actions/runs/40602849197`
 
 ## Ongoing task log
 
@@ -53,9 +53,10 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | 2026-10-22 | Added one Pin-SCALE Media update with the supplied WeChat article and English GitHub explainer links; the homepage includes it automatically.                               | Formatting; Astro diagnostics; 13-page build (Google Fonts unavailable); generated copy, dates, anchors, exact hrefs, metadata, and hidden-route checks. Full-font build and browser QA blocked by local-listener permissions.        | Deployed in `3961f4a`; Pages run `40002628017`.             |
 | 2026-10-23 | Prepared the isolated Pin-SCALE preview checkout with cached fonts and a manual startup command.                                                                            | Astro dev exited before readiness; an explicit localhost static-server attempt failed with a port-binding permission error. Browser file previews are also blocked; no running preview was verified.                                  | local only                                                  |
 | 2026-10-23 | Published the Pin-SCALE Media entry and verified the live News timeline and homepage summary.                                                                               | Formatting; CI Astro diagnostics and 13-page build with eight fonts; Pages build/deploy success; live content, hrefs, anchors, metadata, Media filter, News light/dark views, and desktop/mobile overflow checks.                     | Deployed in `3961f4a`; Pages run `40002628017`.             |
-| 2026-10-23 | Added configurable Highlights to Home and News for the KDD award and two PRL Editors’ Suggestions, preserving the original chronology.                                      | Formatting; 30-file Astro check; 13-page build with local font-fetch warnings; generated highlight anchors, exact copy, heading levels, metadata, chronology, latest-update, hidden-route, and sitemap checks.                        | local only                                                  |
-| 2026-10-27 | Added the November 5 virtual Pinterest ML Day talk announcement on causal retrieval policy optimization at scale, with the official registration link.                      | Formatting; Astro check; 13-page build (font-fetch warnings); generated Home/News copy, dates, categories, anchors, hrefs, metadata, and hidden-route/sitemap checks. Browser QA blocked by listener/launch restrictions.             | local only                                                  |
-| 2026-10-27 | Attempted the authorized ML Day news release; remote main matches the validated source before adding the announcement.                                                      | Remote tree comparison and source audit; GitHub writes require unavailable approval, CLI cannot resolve GitHub, and browser is signed out. No commit or deployment was created.                                                       | local only; release blocked                                 |
+| 2026-10-23 | Added configurable Highlights to Home and News for the KDD award and two PRL Editors’ Suggestions, preserving the original chronology.                                      | Formatting; 30-file Astro check; 13-page build with local font-fetch warnings; generated highlight anchors, exact copy, heading levels, metadata, chronology, latest-update, hidden-route, and sitemap checks.                        | Deployed through `d46c782`; Pages run `40602849197`.        |
+| 2026-10-27 | Added the November 5 virtual Pinterest ML Day talk announcement on causal retrieval policy optimization at scale, with the official registration link.                      | Formatting; Astro check; 13-page build (font-fetch warnings); generated Home/News copy, dates, categories, anchors, hrefs, metadata, and hidden-route/sitemap checks. Browser QA blocked by listener/launch restrictions.             | Deployed in `d46c782`; Pages run `40602849197`.             |
+| 2026-10-27 | Attempted the authorized ML Day news release; remote main matches the validated source before adding the announcement.                                                      | Remote tree comparison and source audit; GitHub writes require unavailable approval, CLI cannot resolve GitHub, and browser is signed out. No commit or deployment was created.                                                       | Blocked attempt; resolved by the CLI release below.         |
+| 2026-10-27 | Published the ML Day announcement using rhou89's existing GitHub CLI session.                                                                                               | Formatting; prior exact-source local check/build; CI 30-file check, 13 pages and eight fonts; live Home/News copy, date, category, anchor, href and metadata checks; Pages build/deploy success.                                      | Deployed in `d46c782`; Pages run `40602849197`.             |
 
 ## Milestones
 
@@ -84,21 +85,23 @@ This protocol is also required by the repository-wide `AGENTS.md`.
 | `f1f066d` | Published the KDD 2026 Best Paper Runner-Up distinction and its sourced News announcement.                             |
 | `bce5ea1` | Updated the homepage display name and added the official KDD 2026 awards source.                                       |
 | `3961f4a` | Published third-party Pin-SCALE coverage with Chinese WeChat and English GitHub source links.                          |
+| `d46c782` | Published the upcoming Pinterest ML Day 2026 talk announcement and official registration link.                         |
 
 ## Current test baseline
 
-The `3961f4a` content update was verified on 2026-10-23:
+The `d46c782` content release was verified on 2026-10-27:
 
-- Formatting passed; CI Astro diagnostics reported 29 files with zero errors,
-  warnings, or hints; the production build generated 13 pages and eight fonts.
-- Live News was visually checked at 1365x768 and 390x844 in light and dark
-  themes. Home and News had zero horizontal overflow at both widths. Exact
-  source-link targets, page titles, canonical URLs, and robots metadata were
-  checked.
-- News contains fifteen entries, including the new Pin-SCALE Media update and
-  its supplied WeChat and GitHub source links. The Media filter shows four
-  entries. The homepage includes the new summary and its stable News anchor.
-- Both build and deploy succeeded in Pages run `40002628017`.
+- Formatting passed. The release source matches the previously checked local
+  source. CI Astro diagnostics reported 30 files with zero errors, warnings,
+  or hints; the production build generated 13 pages and eight self-hosted fonts.
+- Live Home and News return HTTP 200 and include the ML Day announcement dated
+  October 27, 2026. The News entry uses Talks, links to official registration,
+  and is reachable through the homepage's stable News anchor.
+- News contains sixteen entries, including three Talks entries. Copy, dates,
+  category, anchors, exact hrefs, canonical URLs, and robots metadata passed
+  generated-output and live checks. Desktop/mobile browser QA was blocked
+  locally and was not repeated for this content-only release.
+- Both build and deploy succeeded in Pages run `40602849197`.
 
 ### Earlier full-site baseline
 
