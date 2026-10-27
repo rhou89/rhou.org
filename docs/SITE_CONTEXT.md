@@ -1,6 +1,6 @@
 # rhou.org site context
 
-Last consolidated: 2026-10-23
+Last consolidated: 2026-10-27
 
 ## Purpose and positioning
 
@@ -146,8 +146,8 @@ Suggestion, and PRL 2018 Editors’ Suggestion. The KDD short topic is
 original News anchor. On News, selecting a highlight clears an active category
 filter so the destination remains visible.
 
-The record currently contains fifteen updates from 2018–2026: two invited
-talks, seven recognitions, four media-coverage entries, and two experimental
+The record currently contains sixteen updates from 2018–2026: three talks,
+seven recognitions, four media-coverage entries, and two experimental
 realizations of previously proposed momentum-space Josephson dynamics. The
 WashU Physics Theory Seminar shown as `29 February` in the source screenshot is
 recorded as February 29, 2024; 2023 was not a leap year.
@@ -156,6 +156,11 @@ The latest Media entry records third-party Pin-SCALE coverage on WeChat and in
 the `lmxhappy/step-by-step-learning-ai` repository, with Chinese and English
 source links. It is dated October 22, 2026, as the site update date, rather than
 an independently verified publication date for the WeChat article.
+
+The latest Talks entry announces Ryan's upcoming lightning talk on causal
+retrieval policy optimization at scale at Pinterest ML Day 2026. The virtual
+event takes place on November 5, 2026. The entry is dated October 27, 2026,
+as the announcement date and links to the official event registration page.
 
 ## Research-page policy
 
